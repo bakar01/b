@@ -1307,6 +1307,22 @@ end
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
 
+if text == 'معلومات السيرفر' and DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الذاكره العشوائيه 」  ↚\n* '"$memUsedPrc"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 وحـده الـتـخـزيـن 」  ↚\n* '"$HardDisk"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الـمــعــالــج 」  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الــدخــول 」  ↚\n* '`whoami`'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 مـده تـشغيـل الـسـيـرفـر 」 ↚\n* '"$uptime"'*'
+]]):read('*all'))  
+end
+
 if text == "المطور" or text == "مطور" then
 local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
@@ -3132,22 +3148,6 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'معلومات السيرفر' and DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_, io.popen([[
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الذاكره العشوائيه 」  ↚\n* '"$memUsedPrc"'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 وحـده الـتـخـزيـن 」  ↚\n* '"$HardDisk"'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الـمــعــالــج 」  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الــدخــول 」  ↚\n* '`whoami`'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 مـده تـشغيـل الـسـيـرفـر 」 ↚\n* '"$uptime"'*'
-]]):read('*all'))  
-end
-
 if text == 'تيم المسلم' or text == 'تيم' or text == 'متيجي' or text == 'اقوي تيم' then 
 local Text = [[ 
 [متيجي تنضم لتيم المسلم اقوي تيم ع التليجرام](t.me/UU_bh1)
@@ -4225,6 +4225,22 @@ database:del(bot_id.."Set:Cmd:Group1"..msg.chat_id_..':'..msg.sender_user_id_)
 return false
 end
 --------------------------------------------------------------------------------------------------------------
+if text == 'معلومات السيرفر' and DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الذاكره العشوائيه 」  ↚\n* '"$memUsedPrc"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 وحـده الـتـخـزيـن 」  ↚\n* '"$HardDisk"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الـمــعــالــج 」  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الــدخــول 」  ↚\n* '`whoami`'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 مـده تـشغيـل الـسـيـرفـر 」 ↚\n* '"$uptime"'*'
+]]):read('*all'))  
+end
+
 if text == "المطور" or text == "مطور" then
 local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
