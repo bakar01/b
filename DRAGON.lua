@@ -3091,9 +3091,9 @@ end,nil)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then 
 local Text = [[ 
-┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
+┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┑
     𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
-┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
+┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┙
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
@@ -3117,6 +3117,19 @@ keyboard.inline_keyboard = {
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/9&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+if text == 'سمير' then
+local Text = [[
+[المبرمج سمير المسلم](t.me/sameer_3ssam)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '❨ 𝗦𝗔𝗠𝗘𝗘𝗥 ❩',url="t.me/sameer_3ssam"}},
+{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
 if text == 'معلومات السيرفر' and DevSoFi(msg) then 
@@ -15471,7 +15484,7 @@ Msᴀɢ ~ #msgs
 - 🇪🇬 𝗖𝗛 - 「@UU_SD1」 ⦁
 ]],
 [[
-ᯓ 𝗨𝗦𝗘??𝗡𝗮𝗺𝗘 . #username 🇪🇬 ꙰
+ᯓ 𝗨𝗦𝗘𝗥𝗡𝗮𝗺𝗘 . #username 🇪🇬 ꙰
 ᯓ 𝗦𝗧𝗮𝗦𝗧 . #stast 🇪🇬 ꙰
 ᯓ 𝗜𝗗 . #id 🇪🇬 ꙰
 ᯓ 𝗚𝗮𝗺𝗘𝗦 . #game 🇪🇬 ꙰
@@ -16533,7 +16546,7 @@ local Teext =[[
  ⦁الادمن ⇔ المنشئ ⇔ المالك
  ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫
  ⦁❲ المميز❳ ⇊
- ≪━━━━☩𝑩𝑨𝑲??𝑹☩━━━━≫
+ ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫
  ⦁ كشف
  ⦁ المحظورين
  ⦁ المكتومين
