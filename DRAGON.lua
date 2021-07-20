@@ -1266,21 +1266,6 @@ if text == 'مسح كليشه ستارت' and DevSoFi(msg) then
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,' ⦁ تم مسح كليشه ستارت')
 end
-if text == 'معلومات السيرفر' and DevSoFi(msg) then 
-send(msg.chat_id_, msg.id_, io.popen([[
-linux_version=`lsb_release -ds`
-memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
-echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الذاكره العشوائيه 」  ↚\n* '"$memUsedPrc"'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 وحـده الـتـخـزيـن 」  ↚\n* '"$HardDisk"'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الـمــعــالــج 」  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الــدخــول 」  ↚\n* '`whoami`'*'
-echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 مـده تـشغيـل الـسـيـرفـر 」 ↚\n* '"$uptime"'*'
-]]):read('*all'))  
-end
 if text == 'تحديث السورس ' and DevSoFi(msg) then 
 os.execute('rm -rf DRAGON.lua')
 os.execute('wget https://raw.githubusercontent.com/Ffasit/photo/main/DRAGON.lua')
@@ -1383,15 +1368,12 @@ end
 end 
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
 end
+
 if text == 'الاصدار' and DevSoFi(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ⦁ اصدار سورس بكار{ S:12✓}')
 end
-if text == "توكن البوت" and SudoBot(msg) or text == 'جلب التوكن' and SudoBot(msg) then 
-if not DevSoFi(msg) then
-send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
-return false
-end
+
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' ..token) 
 send(msg.chat_id_, msg.id_,' ') 
@@ -1404,25 +1386,10 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '˹𝑺𝑨𝑴𝑬𝑬𝑹˼', url="t.me/Q_0_ll"}}, 
+{{text = '˹𝑺𝑨𝑴𝑬𝑬𝑹˼', url="t.me/sameer_3ssam"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == 'قناه السورس' and DevSoFi(msg) then
-database:del(bot_id..'Srt:Bot') 
-local Text = [[ 
- ⦁ من أحسن السورسات على التليجرام سورس بكار ⦁
-بجد سورس أمان جدا وفي مميزات جامده
-تع نصب بوتك عندنا لو محظور
-خش على تواصل هيدخلك لروم التواصل 
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == "ضع اسم للبوت" and DevSoFi(msg) then  
@@ -3152,6 +3119,22 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/9&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
+if text == 'معلومات السيرفر' and DevSoFi(msg) then 
+send(msg.chat_id_, msg.id_, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الذاكره العشوائيه 」  ↚\n* '"$memUsedPrc"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 وحـده الـتـخـزيـن 」  ↚\n* '"$HardDisk"'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الـمــعــالــج 」  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 الــدخــول 」  ↚\n* '`whoami`'*'
+echo '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁「 مـده تـشغيـل الـسـيـرفـر 」 ↚\n* '"$uptime"'*'
+]]):read('*all'))  
+end
+
 if text == 'تيم المسلم' or text == 'تيم' or text == 'متيجي' or text == 'اقوي تيم' then 
 local Text = [[ 
 [متيجي تنضم لتيم المسلم اقوي تيم ع التليجرام](t.me/UU_bh1)
@@ -3165,6 +3148,23 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/10&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
+if text == 'قناه السورس' or text == 'قناة السورس' or text == 'قناه سورس' or text == '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫' then 
+database:del(bot_id..'Srt:Bot') 
+local Text = [[ 
+ ⦁ من أحسن السورسات على التليجرام سورس بكار ⦁
+بجد سورس أمان جدا وفي مميزات جامده
+تع نصب بوتك عندنا لو محظور
+خش على تواصل هيدخلك لروم التواصل 
+]] 
+keyboard = {}  
+keyboard.inline_keyboard = { 
+{{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
+} 
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+
+
 if text == 'مين نصبلك' or text == 'عايزه بوت' or text == 'عايز بوت' then
 local Text = [[
  🦂 اهلا بك في سورس بكار الجمدان
@@ -3172,7 +3172,9 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '˹M U S L I M ˼', url="t.me/M_S_U"}, {text = '[𝑺𝑶𝑼𝑹𝑪𝑬 𝑩𝑨𝑲𝑨𝑹]', url="t.me/UU_SD1"}}, 
+{{text = '˹B A T O T˼', url="t.me/ba_to_t"},{text = '˹H A M O˼', url="t.me/HaMoO201"}},
+{{text = '˹M U S L I M ˼', url="t.me/M_S_U"}}, 
+{{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
 {{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3222,7 +3224,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba_to_t&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'مطور السورس' then
+if text == 'مطور السورس' or text == 'حمو' then
 local Text = [[
 [حمو مطور السورس](t.me/HaMoO201)
 ]]
@@ -4042,33 +4044,8 @@ end
 end 
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
 end
-if text == 'قناة السورس' then
-local Text = [[ 
-[قناه سورس بكار ادخل وتابع الجديد](t.me/UU_SD1)
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-if text == '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫' then
-local Text = [[ 
- ⦁من أحسن السورسات على التليجرام سورس بكار ⦁
-بجد سورس أمان جدا وفي مميزات جامده
-تع نصب بوتك عندنا لو محظور
-خش على تواصل هيدخلك لروم التواصل 
-]]
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
 
-if text == 'العاب بكار' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
+if text == 'العاب بكار' or text == 'العاب مطوره' or text == 'العاب متطوره' or text == 'العاب' then  
 local Text = [[  
  ⦁ اهلا في قائمه الالعاب المتطوره سورس بكار ⦁ 
 تفضل اختر لعبه من القائمه 
@@ -4107,7 +4084,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 --------------------------------------------------------------------------------------------------------------
-if text == ("انذار") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and not database:get(bot_id..'NightRang:inthar:group'..msg.chat_id_) then
+if text == ("ازار تتونمناات") and tonumber(msg.reply_to_message_id_) ~= 0 and Mod(msg) and not database:get(bot_id..'NightRang:inthar:group'..msg.chat_id_) then
 function FunctionStatus(arg, result)
 if Can_or_NotCan(result.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, '\n ⦁ عذرا لا تستطيع حظر ( '..Rutba(result.sender_user_id_,msg.chat_id_)..' )')
@@ -5374,7 +5351,7 @@ database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},
 function(arg,data) 
 usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n ?? تم كتمه عام من {'..Groups..'} مجموعه'
+status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -11852,6 +11829,9 @@ local msg_id = msg.id_/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
 {text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
 },
 }
@@ -15491,7 +15471,7 @@ Msᴀɢ ~ #msgs
 - 🇪🇬 𝗖𝗛 - 「@UU_SD1」 ⦁
 ]],
 [[
-ᯓ 𝗨𝗦𝗘𝗥𝗡𝗮𝗺𝗘 . #username 🇪🇬 ꙰
+ᯓ 𝗨𝗦𝗘??𝗡𝗮𝗺𝗘 . #username 🇪🇬 ꙰
 ᯓ 𝗦𝗧𝗮𝗦𝗧 . #stast 🇪🇬 ꙰
 ᯓ 𝗜𝗗 . #id 🇪🇬 ꙰
 ᯓ 𝗚𝗮𝗺𝗘𝗦 . #game 🇪🇬 ꙰
@@ -16553,7 +16533,7 @@ local Teext =[[
  ⦁الادمن ⇔ المنشئ ⇔ المالك
  ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫
  ⦁❲ المميز❳ ⇊
- ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫
+ ≪━━━━☩𝑩𝑨𝑲??𝑹☩━━━━≫
  ⦁ كشف
  ⦁ المحظورين
  ⦁ المكتومين
