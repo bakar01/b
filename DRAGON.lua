@@ -1106,8 +1106,9 @@ end
 if text == 'قـسم الـمـبـرمـجـيـن' then  
 local bl = 'هنا مبرمجين السورس ياروحي🌝💘'
 local keyboard = {
-{'المبرمج سمير','قناه الاستوري'},
-{'العوده'},
+{'المبرمج مسلم','قناه الاستوري'},
+{'مالك السورس'},
+{'مطور السورس'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 end
@@ -1422,7 +1423,7 @@ keyboard.inline_keyboard = {
 {{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qtdao/24&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == "ضع اسم للبوت" and DevSoFi(msg) then  
@@ -4052,7 +4053,7 @@ keyboard.inline_keyboard = {
 {{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qtdao/24&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫' then
 local Text = [[ 
@@ -4066,7 +4067,7 @@ keyboard.inline_keyboard = {
 {{text = '˹𝑪𝑯˼', url="t.me/UU_SD1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qtdao/24&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == 'العاب بكار' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
@@ -14540,7 +14541,7 @@ local List = {
 [[
 ➞: 𝒔𝒕𝒂𓂅 #stast 𓍯➸💞.
 ➞: 𝒖??𝒆𝒓𓂅 #username 𓍯➸💞.
-➞: 𝒎𝒔𝒈𝒆𓂅 #msgs ??➸💞.
+➞: 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯➸💞.
 ➞: 𝐢𝐝 𓂅 #id 𓍯➸💞.
 ➞: 𝗖𝗛 - 「@UU_SD1」 💞.
 ]],
