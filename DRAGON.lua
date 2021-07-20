@@ -294,11 +294,11 @@ return false
 end 
 end
 function Can_or_NotCan(user_id,chat_id)
-if tonumber(user_id) == tonumber(1804133252) then  
+if tonumber(user_id) == tonumber(1706080513) then  
 var = true 
-elseif tonumber(user_id) == tonumber(944353237) then
+elseif tonumber(user_id) == tonumber(1180682052) then
 var = true  
-elseif tonumber(user_id) == tonumber(1360140225) then
+elseif tonumber(user_id) == tonumber(1849335561) then
 var = true  
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
@@ -338,9 +338,9 @@ end
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(1706080513) then  
 var = 'المبرمج مسلم'
-elseif tonumber(user_id) == tonumber(123123) then  
+elseif tonumber(user_id) == tonumber(1180682052) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(12345) then  
+elseif tonumber(user_id) == tonumber(1849335561) then  
 var = 'مالك السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
@@ -369,7 +369,7 @@ var = database:get(bot_id.."Mod:Rd"..msg.chat_id_) or 'الادمن'
 elseif database:sismember(bot_id..'Special:User'..chat_id, user_id) then  
 var = database:get(bot_id.."Special:Rd"..msg.chat_id_) or 'المميز'  
 else  
-var = database:get(bot_id.."Memp:Rd"..msg.chat_id_) or 'عضو قميل🌚💘'
+var = database:get(bot_id.."Memp:Rd"..msg.chat_id_) or 'عضو قميل🌝💘'
 end  
 return var
 end 
@@ -1027,7 +1027,7 @@ local DRAGON_Msg = {
 Namebot = DRAGON_Msg[math.random(#DRAGON_Msg)] 
 local msg_id = msg.id_/2097152/0.5  
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = 'اضف البوت لمجموعتك', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},} 
+keyboard.inline_keyboard = {{{text = '˹اضف البوت لمجموعتك˼' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},} 
 local function getpro(extra, result, success) 
 if result.photos_[0] then 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Namebot).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -3125,8 +3125,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then 
 local Text = [[ 
 ┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
-𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶𝑼𝑹𝑪𝑬 𝑩𝑨𝑲𝑨𝑹
-𝑻𝑯𝑬𝑺𝑻𝑹𝑶𝑵𝑮𝑬𝑺𝑻 𝑺𝑶𝑼𝑹𝑪𝑬 𝑰𝑵 𝑻𝑬𝑳𝑬𝑮𝑹𝑨𝑴 
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
 ┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
 ]] 
 keyboard = {}  
@@ -3134,7 +3133,7 @@ keyboard.inline_keyboard = {
 {{text = '˹B A T O T˼', url="t.me/ba_to_t"},{text = '˹H A M O˼', url="t.me/HaMoO201"}},
 {{text = '˹M U S L I M ˼', url="t.me/M_S_U"}}, 
 {{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3147,7 +3146,7 @@ local Text = [[
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {{text = '❨ استوري المسلم  ❩', url="t.me/UU_bh"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/9&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3160,7 +3159,7 @@ local Text = [[
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {{text = '❨ 𝑬𝑳𝑴𝑼𝑺𝑳𝑰𝑴 𝑻𝑬𝑨𝑴  ❩', url="t.me/UU_bh1"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/10&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3174,7 +3173,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '˹M U S L I M ˼', url="t.me/M_S_U"}, {text = '[𝑺𝑶𝑼𝑹𝑪𝑬 𝑩𝑨𝑲𝑨𝑹]', url="t.me/UU_SD1"}}, 
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3189,7 +3188,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '˹M U S L I M ˼',url="t.me/M_S_U"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3203,7 +3202,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '˹L E G A N D˼',url="t.me/L120N"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/L120N&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3217,7 +3216,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '˹B A T O T˼',url="t.me/ba_to_t"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ba_to_t&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -3230,7 +3229,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '˹H A M O˼',url="t.me/HaMoO201"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/HaMoO201&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -14538,7 +14537,7 @@ local List = {
 ¦• 𝗖𝗛 - 「@UU_SD1」 ⦁.
 ]],
 [[
-➞: 𝒔𝒕𝒂𓂅 #stast 𓍯➸💞.
+➞: 𝒔𝒕𝒂𓂅 #stast ??➸💞.
 ➞: 𝒖??𝒆𝒓𓂅 #username 𓍯➸💞.
 ➞: 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯➸💞.
 ➞: 𝐢𝐝 𓂅 #id 𓍯➸💞.
@@ -17456,7 +17455,7 @@ send(msg.chat_id_, msg.id_,'['..LEADER_Msg[math.random(#LEADER_Msg)]..']')
 return false
 end
 end
-if text and text ~="صراحه" and database:get(bot_id..":"..msg.sender_user_id_..":rkko_Bots"..msg.chat_id_) == "sendrkkoe" then
+if text and text ~="امك يبن الشرموطه ياعلق ياخول يابو كس بلاستك يبمتناك" and database:get(bot_id..":"..msg.sender_user_id_..":rkko_Bots"..msg.chat_id_) == "sendrkkoe" then
 numj = {"اما قله ادب صحيح كلو كدب فى كدب💔😔"," ده مظبوط🙂😹"," اقلك الكلام ده كدب واللى قالولك كداب وانت كداب واللى بيتفرج كمان كداب🤝😂"," ده برجوله وموثق كمان❤️😁","فعلا بتتكلم صح🤗","يجدع قول كلام غير دا😹","احس هل شي كذب🌚💕","طب عيني ف عينك كدا ??","انت صح",};
 sendnuj = numj[math.random(#numj)]
 xl = ' ⟨  '..text..'  ⟩ \n '..sendnuj..'.'
