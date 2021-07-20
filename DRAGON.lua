@@ -67,7 +67,6 @@ UserName = database:get(id_server..":SUDO:USERNAME"),
 create(config, "./Bkar.lua")   
 end 
 create_config_auto()
-create_config_auto()
 botUserName = database:get(id_server..":token_username")
 token = database:get(id_server..":token")
 SUDO = database:get(id_server..":SUDO:ID")
