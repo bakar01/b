@@ -1109,6 +1109,7 @@ local keyboard = {
 {'المبرمج مسلم','قناه الاستوري'},
 {'مالك السورس'},
 {'مطور السورس'},
+{'العوده'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
 end
