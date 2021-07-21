@@ -3194,7 +3194,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'المبرمج مسلم' then
+if text == 'المبرمج مسلم' or text == 'المبرمج المسلم' or text == 'المسلم' then
 local Text = [[
 المبرمج مسلم لو حابب تتواصل معاه
 اتبع الزر إلى تحت ↓
@@ -13931,6 +13931,17 @@ send(msg.chat_id_, msg.id_,'لا تمتلك صوره في حسابك', 1, 'md')
   end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end
+
+if text == "مسلم" or text == 'سمير عصام' then 
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_," المبرمج سمير المسلم  @M_S_U ", msg.id_, msg.id_, "md") 
+else 
+send(msg.chat_id_, msg.id_,'المبرمج سمير المسلم  @M_S_U', 1, 'md') 
+  end end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1706080513, offset_ = 0, limit_ = 1 }, getpro, nil) 
+end
+
 if text and text:match("^صورتي (%d+)$") and faeder11(msg) then
 local pronumb = {string.match(text, "^(صورتي) (%d+)$")}
 local function gproen(extra, result, success)
@@ -14014,7 +14025,7 @@ return false
 end
 local function getpro(extra, result, success)
 if result.photos_[0] then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_," ⦁نسبه جمالك هيا ⇜ %"..result.total_count_.." يختي قمر يجدعان 🌚💕", msg.id_, msg.id_, "md")
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_," ⦁نسبه جمالك هيا ⇜ %500 يختي قمر يجدعان 🌚💕", msg.id_, msg.id_, "md")
 else
 send(msg.chat_id_, msg.id_,'لا تمتلك صوره في حسابك', 1, 'md')
   end end
@@ -14928,7 +14939,7 @@ Msᴀɢ ~ #msgs
 𝐓𝐓• 𝐔𝐬𝐞??𝐍𝐚 𖠰 #username .
 𝐓𝐓• 𝐒𝐓𝐀𝐒𝐓 𖠰 #stast .
 𝐓𝐓• 𝐀𝐔𝐓𝐎 𖠰 #auto .
-𝐓𝐓• 𝗘𝗗𝗜𝗧 𖠰 #edit .
+𝐓𝐓• 𝗘𝗗𝗜𝗧 ?? #edit .
 𝐓𝐓• 𝗖𝗛 - 「@UU_SD1」 ⦁.
 ]],
 [[
