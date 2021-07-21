@@ -1027,7 +1027,7 @@ local DRAGON_Msg = {
 Namebot = DRAGON_Msg[math.random(#DRAGON_Msg)] 
 local msg_id = msg.id_/2097152/0.5  
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '˹اضف البوت لمجموعتك˼' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},} 
+keyboard.inline_keyboard = {{{text = 'اضف البوت لمجموعتك' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},} 
 local function getpro(extra, result, success) 
 if result.photos_[0] then 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Namebot).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14959,7 +14959,7 @@ Msᴀɢ ~ #msgs
 𝗖𝗛 - 「@UU_SD1」  𖦹 .
 ]],
 [[
-𖤍 |↶ #id    ꙰🇪🇬.
+?? |↶ #id    ꙰🇪🇬.
 𖤍 |↶ #username    ꙰🇪🇬.
 𖤍 |↶ #msgs    ꙰🇪🇬.
 𖤍 |↶ #stast    ꙰🇪🇬.
@@ -15413,7 +15413,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 ➜𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 : #username
-➜??𝗘𝗦𝗦??𝗚𝗘𝗦 : #msgs
+➜𝗠??𝗦𝗦??𝗚𝗘𝗦 : #msgs
 ➜𝗦𝗧𝗔𝗧𝗦 : #stast
 ➜𝗜𝗗 : #id
 ➜𝗖𝗛 - 「@UU_SD1」 ⦁
