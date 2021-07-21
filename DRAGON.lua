@@ -16127,10 +16127,8 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'مميزات🎪', callback_data="/change-photo"},
+{text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'العاب متطوره🎮', callback_data="/sofi"},
 },
-{
-{text = 'العاب متطوره🎮', callback_data="/sofi"},
 },
 {
 {text = 'الاوامر🎡', callback_data="/help90"},
