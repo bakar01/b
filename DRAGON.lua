@@ -3098,22 +3098,22 @@ end,nil)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then 
 local Text = [[ 
-┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
-  [↝ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+┏━━━━━━•⊱𖥔⊰•━━━━━━━┓
+[↝ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
 
-  [↝ 𝐞𝐥𝐦𝐮𝐬𝐥𝐢𝐦](t.me/M_S_U)
+[↝ 𝐞𝐥𝐦𝐮𝐬𝐥𝐢𝐦](t.me/M_S_U)
 
-  [↝ 𝐛𝐚𝐭𝐨𝐭](t.me/ba_to_t)
+[↝ 𝐛𝐚𝐭𝐨𝐭](t.me/ba_to_t)
 
-  [↝ 𝐡𝐚𝐦𝐨](t.me/HaMoO201)
+[↝ 𝐡𝐚𝐦𝐨](t.me/HaMoO201)
 
-  [↝ 𝐜𝐡 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
-┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
+[↝ 𝐜𝐡 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+┗━━━━━━•⊱𖥔⊰•━━━━━━━┛
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {{text = '˹𝐜𝐡 𝐛𝐚𝐤𝐚𝐫˼', url="t.me/UU_SD1"}},
-{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
+{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -14977,7 +14977,7 @@ Msᴀɢ ~ #msgs
 🇪🇬≪💎≫ #id  • メ
 🇪🇬≪💎≫ #msgs  •メ
 🇪🇬≪💎≫ #game •メ
-🇪??𝗖𝗛 - 「@UU_SD1」 ⦁
+🇪🇬𝗖𝗛 - 「@UU_SD1」 ⦁
 ]],
 [[
  𝚄??𝙴?? 𓄹𓄼 #username
@@ -15432,7 +15432,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 𝒔𝒕𝒂𓂅 #stast 𓍯
-𝐮𝐬𝐞𝐫𓂅 #username 𓍯
+𝐮𝐬𝐞??𓂅 #username 𓍯
 𝒎????𝒆𓂅 #msgs 𓍯
 𝐢𝐝 𓂅 #id 𓍯
 𓂅 𝗖𝗛 - 「@UU_SD1」 ⦁
@@ -17145,7 +17145,7 @@ end
 if Text == '/dadada' then
 local Teext =[[
 ┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┑
-    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲??𝑹 
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 ??𝑶 𝑩𝑨𝑲𝑨𝑹 
 ┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┙
 ]]
 keyboard = {} 
