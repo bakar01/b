@@ -17160,6 +17160,25 @@ keyboard.inline_keyboard = {
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 
+if Text == '/fafafa' then
+local Teext =[[
+┍┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
+┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
+]] 
+keyboard = {}  
+keyboard.inline_keyboard = {
+{
+{text = 'مطورين السورس', callback_data="/mdkxkjxjdjxe"},{text = 'المبرمج', callback_data="/dadada"},
+},
+{
+{text = '˹𝑪𝑯˼ ', url="t.me/UU_SD1"},
+},
+}
+local msg_id = msg.id_/2097152/0.5 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
 if Text == '/mdkxkjxjdjxe' then
 local Teext =[[
 ┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
@@ -17171,7 +17190,7 @@ keyboard.inline_keyboard = {
 {{text = '˹B A T O T˼', url="t.me/ba_to_t"},{text = '˹H A M O˼', url="t.me/HaMoO201"}},
 {{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
 {{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-{{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
+{{text = '◗القائمه الرائسيه◖', callback_data="/fafafa"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -17187,7 +17206,7 @@ keyboard.inline_keyboard = {
 {{text = '˹M U S L I M ˼', url="t.me/M_S_U"}}, 
 {{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
 {{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-{{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
+{{text = '◗القائمه الرائسيه◖', callback_data="/fafafa"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
