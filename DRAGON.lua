@@ -3115,6 +3115,25 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
+if text == 'سورسي' or text == 'سويس' or text == 'احماحم' or text == 'source' then 
+local Text = [[
+┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
+┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'مطورين السورس', callback_data="/mdkxkjxjdjxe"},{text = 'المبرمج', callback_data="/dadada"},
+},
+{
+{text = '˹𝑪𝑯˼ ', url="t.me/UU_SD1"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
 if text == 'قناه الاستوري' or text == 'استوري المسلم' or text == 'قناه الاستوريهات' or text == 'الاستوريهات' then 
 local Text = [[ 
 قناه الاستوري ياروحي 🌚💘
