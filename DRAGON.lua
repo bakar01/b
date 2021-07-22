@@ -3103,12 +3103,14 @@ local Text = [[
 ┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
 ]] 
 keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '˹B A T O T˼', url="t.me/ba_to_t"},{text = '˹H A M O˼', url="t.me/HaMoO201"}},
-{{text = '˹M U S L I M ˼', url="t.me/M_S_U"}}, 
-{{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
-{{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-} 
+keyboard.inline_keyboard = {
+{
+{text = 'مطورين السورس', callback_data="/mdkxkjxjdjxe"},{text = 'المبرمج', callback_data="/dadada"},
+},
+{
+{text = '˹𝑪𝑯˼ ', url="t.me/UU_SD1"},
+},
+}
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
