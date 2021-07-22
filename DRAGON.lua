@@ -3098,17 +3098,17 @@ end,nil)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then 
 local Text = [[ 
-┏━━━━━━•⊱𖥔⊰•━━━━━━━┓
-[↝ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
+  [↝ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
 
-[↝ 𝐞𝐥𝐦𝐮𝐬𝐥𝐢𝐦](t.me/M_S_U)
+  [↝ 𝐞𝐥𝐦𝐮𝐬𝐥𝐢𝐦](t.me/M_S_U)
 
-[↝ 𝐛𝐚𝐭𝐨𝐭](t.me/ba_to_t)
+  [↝ 𝐛𝐚𝐭𝐨𝐭](t.me/ba_to_t)
 
-[↝ 𝐡𝐚𝐦𝐨](t.me/HaMoO201)
+  [↝ 𝐡𝐚𝐦𝐨](t.me/HaMoO201)
 
-[↝ 𝐜𝐡 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
-┗━━━━━━•⊱𖥔⊰•━━━━━━━┛
+  [↝ 𝐜𝐡 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
@@ -14977,7 +14977,7 @@ Msᴀɢ ~ #msgs
 🇪🇬≪💎≫ #id  • メ
 🇪🇬≪💎≫ #msgs  •メ
 🇪🇬≪💎≫ #game •メ
-🇪🇬𝗖𝗛 - 「@UU_SD1」 ⦁
+🇪??𝗖𝗛 - 「@UU_SD1」 ⦁
 ]],
 [[
  𝚄??𝙴?? 𓄹𓄼 #username
@@ -17145,7 +17145,7 @@ end
 if Text == '/dadada' then
 local Teext =[[
 ┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┑
-    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲??𝑹 
 ┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┙
 ]]
 keyboard = {} 
