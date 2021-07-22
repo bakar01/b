@@ -3098,15 +3098,21 @@ end,nil)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then 
 local Text = [[ 
-┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┑
-    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
-┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1)☜━━━━━┙
+┏━━━━━━•⊱𖥔⊰•━━━━━━━┓
+[↝ 𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐬𝐨𝐮𝐫𝐜𝐞 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+
+[↝ 𝐞𝐥𝐦𝐮𝐬𝐥𝐢𝐦](t.me/M_S_U)
+
+[↝ 𝐛𝐚𝐭𝐨𝐭](t.me/ba_to_t)
+
+[↝ 𝐡𝐚𝐦𝐨](t.me/HaMoO201)
+
+[↝ 𝐜𝐡 𝐛𝐚𝐤𝐚𝐫](t.me/UU_SD1)
+┗━━━━━━•⊱𖥔⊰•━━━━━━━┛
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '˹B A T O T˼', url="t.me/ba_to_t"},{text = '˹H A M O˼', url="t.me/HaMoO201"}},
-{{text = '˹M U S L I M ˼', url="t.me/M_S_U"}}, 
-{{text = '˹𝑪𝑯 ˼', url="t.me/UU_SD1"}},
+{{text = '˹𝐜𝐡 𝐛𝐚𝐤𝐚𝐫˼', url="t.me/UU_SD1"}},
 {{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
@@ -17242,25 +17248,6 @@ keyboard.inline_keyboard = {
 {
 {text = '˹𝑪𝑯˼ ', url="t.me/UU_SD1"},
 },
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if Text == '/change-photo' then
-local Teext =[[
-✧بك في مميزات سورس ناسا✧
-✧مميزات الخاصه بسورس✧
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = 'تويت', url="https://t.me/ch_nasa/16"},{text = 'كتبات',url="https://t.me/ch_nasa/21"}},   
-{{text = 'انصحني', url="https://t.me/ch_nasa/17"},{text = 'لو خيروك', url="https://t.me/ch_nasa/18"}}, 
-{{text = 'الصراحه', url="https://t.me/ch_nasa/27"},{text = 'حروف', url="https://t.me/ch_nasa/19"}}, 
-{{text = 'رزله', url="https://t.me/ch_nasa/22"},{text = 'رد عليه يابوت', url="https://t.me/ch_nasa/26"}}, 
-{{text = 'بتكره دا', url="https://t.me/ch_nasa/23"},{text = 'نكته', url="https://t.me/ch_nasa/20"}}, 
-{{text = 'غنيلي', url="https://t.me/ch_nasa/24"}},
-{{text = 'نسبه جمالي', url="https://t.me/ch_nasa/28"},{text = 'اليتيوب', url="https://t.me/ch_nasa/29"}},
-{{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
-{{text = '˹𝑪𝑯˼ ', url="t.me/ch_nasa"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
