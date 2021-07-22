@@ -17119,25 +17119,6 @@ keyboard.inline_keyboard = {
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 ------------------------------ callback add dev mr sofi
-if Text == '/mute-name' then
-local Teext =[[
-✧أنت الآن في العاب السورس✧
-اتبع الازار الي في الاسفل⇣
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = 'لعبه البات', url="https://t.me/UU_SD1/10"},{text = 'لعبه الرياضيات',url="https://t.me/UU_SD1/11"}},   
-{{text = 'لعبه المختلف', url="https://t.me/UU_SD1/16"},{text = 'لعبه السمايلات', url="https://t.me/UU_SD1/17"}}, 
-{{text = 'لعبه التخمين', url="https://t.me/UU_SD1/20"},{text = 'لعبه العكس', url="https://t.me/UU_SD1/19"}}, 
-{{text = 'لعبه الاسرع', url="https://t.me/UU_SD1/18"},{text = 'لعبه الانكليزي', url="https://t.me/UU_SD1/14"}}, 
-{{text = 'لعبه حزوره', url="https://t.me/UU_SD1/13"},{text = 'لعبه المعاني', url="https://t.me/UU_SD1/12"}}, 
-{{text = 'لعبه الامثله', url="https://t.me/UU_SD1/15"}},
-{{text = 'مريم', url="https://t.me/UU_SD1/44"}},
-{{text = '◗القائمه الرائسيه◖', callback_data="/add"}},
-{{text = '˹𝑪𝑯˼ ', url="t.me/ch_nasa"}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
 
 if Text == '/mdkxkjxjdjxe' then
 local Teext =[[
@@ -17295,10 +17276,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'مميزات🎪', callback_data="/change-photo"},
-},
-{
-{text = 'العاب متطوره🎮', callback_data="/sofi"},
+{text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'العاب متطوره🎮', callback_data="/sofi"},
 },
 {
 {text = 'الاوامر🎡', callback_data="/help12"},
