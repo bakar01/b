@@ -16127,7 +16127,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 ----------------------------------------------------------------------------
-if text == 'الالعاب' then
+f text == 'الالعاب' then
 local Text = [[
 🎮 اهلا بك في قسم الالعاب ..↑↓
  اختر العبه الذي تريدها .↑↓
@@ -16139,7 +16139,6 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'العاب متطوره🎮', callback_data="/sofi"},
-},
 },
 {
 {text = 'الاوامر🎡', callback_data="/help90"},
