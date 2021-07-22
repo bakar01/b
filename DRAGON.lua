@@ -1406,7 +1406,7 @@ return false
 end
 if text == ("المطورين الاساسين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:SoFi:2")
-t = "\n ⦁ قائمة مطورين الاساسين للبوت \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n ⦁  قائمة مطورين الاساسين للبوت \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1416,9 +1416,13 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = " ⦁ لا يوجد مطورين الاساسين"
+t = " ⦁  لا يوجد مطورين الاساسين"
 end
 send(msg.chat_id_, msg.id_, t)
+end
+if text == ("مسح المطورين الاساسين") and SudoBot(msg) then
+database:del(bot_id.."Dev:SoFi:2")
+send(msg.chat_id_, msg.id_, "\n ⦁ تم مسح قائمة المطورين الاساسين  ")
 end
 
 
@@ -1443,19 +1447,23 @@ Text = '\n ⦁ الجروبات ↚{`'..Groups..'`}'
 send(msg.chat_id_, msg.id_,Text) 
 return false
 end
-if text == ("المطورين") and SudoBot(msg) then
+if text == ("مسح المطورين") and DevSoFi(msg) then
+database:del(bot_id..'Sudo:User')
+send(msg.chat_id_, msg.id_, "\n ⦁ تم مسح قائمة المطورين  ")
+end
+if text == ("المطورين") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n ⦁ قائمة المطورين \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n ⦁  قائمة مطورين البوت \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
-t = t..""..k.."- 「 '..v..' 」\n"
+t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = " ⦁ لا يوجد مطورين"
+t = " ⦁  لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
@@ -16895,7 +16903,7 @@ return false
 end
 local Teext =[[
 اوامر حماية المجموعه ⇊
-≪━━━━☩??𝑨𝑲𝑨𝑹☩━━━━≫
+≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫
 قفل  ⇔  فتح + الامر 
 قفل  ⇔  فتح ❲ الكـــل ❳
 ❲ بالتقيد ، بالطرد ، بالكتم ❳
