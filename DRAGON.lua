@@ -16140,6 +16140,7 @@ keyboard.inline_keyboard = {
 {
 {text = 'العاب السورس💌', callback_data="/mute-name"},{text = 'العاب متطوره🎮', callback_data="/sofi"},
 },
+},
 {
 {text = 'الاوامر🎡', callback_data="/help90"},
 },
@@ -16190,15 +16191,15 @@ end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, ' ⦁ تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, ' ☃ تم تعطيل حساب العمر')
 database:set(bot_id.." sofi:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تعطيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_, ' ⦁ تم تعطيل حساب العمر')
+send(msg.chat_id_, msg.id_, ' ☃ تم تعطيل حساب العمر')
 database:set(bot_id.." sofi:age_Bots"..msg.chat_id_,"close")
 end
 if text == "تفعيل حساب العمر" and Manager(msg) then
-send(msg.chat_id_, msg.id_,' ⦁ تم تفعيل حساب العمر')
+send(msg.chat_id_, msg.id_,' ☃ تم تفعيل حساب العمر')
 database:set(bot_id.." sofi:age_Bots"..msg.chat_id_,"open")
 end
 if text and text:match("^احسب (.*)$") and database:get(bot_id.." sofi:age_Bots"..msg.chat_id_) == "open" then
