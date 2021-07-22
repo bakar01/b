@@ -1389,7 +1389,11 @@ if text == 'الاصدار' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ⦁ اصدار سورس بكار{ S:12✓}')
 end
-
+if text == "توكن البوت البوت" and SudoBot(msg) or text == 'الالالبوت' and SudoBot(msg) then 
+if not DevSoFi(msg) then
+send(msg.chat_id_, msg.id_,'هذا الامر خاص بمطور البوت')
+return false
+end
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.sender_user_id_ .. '&text=' ..token) 
 send(msg.chat_id_, msg.id_,' ') 
@@ -13228,7 +13232,7 @@ if not my_ph then
 send(msg.chat_id_, msg.id_," ⦁انا مين معطله") 
 return false  
 end
-send(msg.chat_id_,msg.id_, '[ انت مميز ابن ناس 😊 ](t.me/UU_SD1)')
+send(msg.chat_id_,msg.id_, '[ انت مميز ابن ناس ?? ](t.me/UU_SD1)')
 return false
 end
 
@@ -17141,7 +17145,7 @@ end
 if Text == '/dadada' then
 local Teext =[[
 ┍━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┑
-    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 𝑻𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
+    𝑾𝑬𝑳𝑪𝑶𝑴𝑬 ??𝑶 𝑺𝑶 𝑩𝑨𝑲𝑨𝑹 
 ┕━━━━━☞[𝑩𝑨𝑲𝑨𝑹](t.me/UU_SD1) ☜━━━━━┙
 ]]
 keyboard = {} 
