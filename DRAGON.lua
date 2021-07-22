@@ -1289,6 +1289,23 @@ os.execute('wget https://raw.githubusercontent.com/Ffasit/photo/main/DRAGON.lua'
 send(msg.chat_id_, msg.id_,' ⦁ تم تحديث السورس')
 dofile('DRAGON.lua')  
 end
+if text == 'رفع المشتركين' and DevSoFi(msg) then 
+function by_reply(extra, result, success)    
+if result.content_.document_ then  
+local ID_FILE = result.content_.document_.document_.persistent_id_  
+local File_Name = result.content_.document_.file_name_ 
+local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
+local info_file = io.open('./users.json', "r"):read('*a') 
+local users = JSON.decode(info_file) 
+for k,v in pairs(users.users) do 
+database:sadd(bot_id..'User_Bot',v)  
+end 
+send(msg.chat_id_,msg.id_,'تم رفع المشتركين ') 
+end    
+end 
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
+end
 if text == 'جلب المشتركين' and DevSoFi(msg) then 
 local list = database:smembers(bot_id..'User_Bot') 
 local t = '{"users":['   
@@ -1306,19 +1323,69 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './users.json', ' عدد المشتركين { '..#list..'}') 
 end
 
-if text == 'رفع المشتركين' and DevSoFi(msg) then 
+if text == 'جلب المطورين' then 
+local list = database:smembers(bot_id..'Sudo:User') 
+local t = '{"users":['   
+for k,v in pairs(list) do 
+if k == 1 then 
+t =  t..'"'..v..'"' 
+else 
+t =  t..',"'..v..'"' 
+end 
+end 
+t = t..']}' 
+local File = io.open('./sudos3.json', "w") 
+File:write(t) 
+File:close() 
+sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './sudos3.json', ' عدد المطورين { '..#list..'}') 
+end 
+if text == 'رفع المطورين' or text == 'رفع نسخه المطورين' then 
 function by_reply(extra, result, success)    
 if result.content_.document_ then  
 local ID_FILE = result.content_.document_.document_.persistent_id_  
 local File_Name = result.content_.document_.file_name_ 
 local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
 download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
-local info_file = io.open('./users.json', "r"):read('*a') 
+local info_file = io.open('./sudos3.json', "r"):read('*a') 
 local users = JSON.decode(info_file) 
 for k,v in pairs(users.users) do 
-database:sadd(bot_id..'User_Bot',v)  
+database:sadd(bot_id..'Sudo:User',v)  
 end 
-send(msg.chat_id_,msg.id_,'تم رفع المشتركين ') 
+send(msg.chat_id_,msg.id_,'تم رفع المطورين ') 
+end    
+end 
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
+end
+
+if text == 'جلب الاساسين' or text == 'جلب المطورين الاساسين' then 
+local list = database:smembers(bot_id..'Dev:SoFi:2') 
+local t = '{"users":['   
+for k,v in pairs(list) do 
+if k == 1 then 
+t =  t..'"'..v..'"' 
+else 
+t =  t..',"'..v..'"' 
+end 
+end 
+t = t..']}' 
+local File = io.open('./sudos3.json', "w") 
+File:write(t) 
+File:close() 
+sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './sudos3.json', ' عدد المطورين الاساسين { '..#list..'}') 
+end 
+if text == 'رفع الاساسين' or text == 'رفع المطورين الاساسين' then 
+function by_reply(extra, result, success)    
+if result.content_.document_ then  
+local ID_FILE = result.content_.document_.document_.persistent_id_  
+local File_Name = result.content_.document_.file_name_ 
+local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
+download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
+local info_file = io.open('./sudos3.json', "r"):read('*a') 
+local users = JSON.decode(info_file) 
+for k,v in pairs(users.users) do 
+database:sadd(bot_id..'Dev:SoFi:2',v)  
+end 
+send(msg.chat_id_,msg.id_,'تم رفع المطورين الاساسين ') 
 end    
 end 
 tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
@@ -1352,39 +1419,6 @@ end,nil)
 end
 end
 
-if text == 'جلب المطورين' and DevSoFi(msg) then  
-local list = database:smembers(bot_id..'Sudo:User') 
-local t = '{"users":['   
-for k,v in pairs(list) do 
-if k == 1 then 
-t =  t..'"'..v..'"' 
-else 
-t =  t..',"'..v..'"' 
-end 
-end 
-t = t..']}' 
-local File = io.open('./sudos3.json', "w") 
-File:write(t) 
-File:close() 
-sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './sudos3.json', ' عدد المطورين { '..#list..'}') 
-end 
-if text == 'رفع المطورين' and DevSoFi(msg) then 
-function by_reply(extra, result, success)    
-if result.content_.document_ then  
-local ID_FILE = result.content_.document_.document_.persistent_id_  
-local File_Name = result.content_.document_.file_name_ 
-local File = json:decode(https.request('https://api.telegram.org/bot'.. token..'/getfile?file_id='..ID_FILE) )  
-download_to_file('https://api.telegram.org/file/bot'..token..'/'..File.result.file_path, ''..File_Name)  
-local info_file = io.open('./sudos3.json', "r"):read('*a') 
-local users = JSON.decode(info_file) 
-for k,v in pairs(users.users) do 
-database:sadd(bot_id..'Sudo:User',v)  
-end 
-send(msg.chat_id_,msg.id_,'تم رفع المطورين ') 
-end    
-end 
-tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil) 
-end
 if text == 'الاصدار' and DevSoFi(msg) then 
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ⦁ اصدار سورس بكار{ S:12✓}')
@@ -1521,7 +1555,38 @@ database:setex(bot_id.."Send:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_i
 send(msg.chat_id_, msg.id_," ⦁ ارسل لي التوجيه الان")
 return false
 end 
-if text == 'جلب النسخه' and DevSoFi(msg) then 
+if text == 'رفع نسخه الاحتياطيه' and DevSoFi(msg) then   
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
+if tonumber(msg.reply_to_message_id_) > 0 then
+function by_reply(extra, result, success)   
+if result.content_.document_ then 
+local ID_FILE = result.content_.document_.document_.persistent_id_ 
+local File_Name = result.content_.document_.file_name_
+AddFile_Bot(msg,msg.chat_id_,ID_FILE,File_Name)
+end   
+end
+tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonumber(msg.reply_to_message_id_) }, by_reply, nil)
+end
+end
+
+if text == 'جلب نسخه الاحتياطيه' and DevSoFi(msg) then 
+if AddChannel(msg.sender_user_id_) == false then
+local textchuser = database:get(bot_id..'text:ch:user')
+if textchuser then
+send(msg.chat_id_, msg.id_,'['..textchuser..']')
+else
+send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+end
+return false
+end
 GetFile_Bot(msg)
 end
 if text == "تنظيف المشتركين " and SudoBot(msg) then 
@@ -4120,7 +4185,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
-if text == 'رفع النسخه' and DevSoFi(msg) then   
+if text == 'رفع نسخه الاحتياطيه' and DevSoFi(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -4142,7 +4207,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 
-if text == 'جلب النسخه' and DevSoFi(msg) then 
+if text == 'جلب نسخه الاحتياطيه' and DevSoFi(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
