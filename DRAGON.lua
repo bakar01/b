@@ -172,7 +172,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1706080513,1180682052,1849335561}   
+sudo_users = {SUDO,1706080513,1180682052,1831228999}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -298,7 +298,7 @@ if tonumber(user_id) == tonumber(1706080513) then
 var = true 
 elseif tonumber(user_id) == tonumber(1180682052) then
 var = true  
-elseif tonumber(user_id) == tonumber(1849335561) then
+elseif tonumber(user_id) == tonumber(1831228999) then
 var = true  
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
@@ -340,7 +340,7 @@ if tonumber(user_id) == tonumber(1706080513) then
 var = 'المبرمج مسلم'
 elseif tonumber(user_id) == tonumber(1180682052) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1849335561) then  
+elseif tonumber(user_id) == tonumber(1831228999) then  
 var = 'مالك السورس'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
@@ -5288,7 +5288,7 @@ if tonumber(result.sender_user_id_) == tonumber(1706080513) then
 send(msg.chat_id_, msg.id_, " 🦂 لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1849335561) then  
+if tonumber(result.sender_user_id_) == tonumber(1831228999) then  
 send(msg.chat_id_, msg.id_, " 🦂 لا تسطيع حظر مالك السورس عام")
 return false 
 end
@@ -5342,7 +5342,7 @@ if tonumber(result.id_) == tonumber(1706080513) then
 send(msg.chat_id_, msg.id_, " 🦂 لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1849335561) then
+if tonumber(result.id_) == tonumber(1831228999) then
 send(msg.chat_id_, msg.id_, " 🦂 لا يمكنك حظر مالك السورس\n")
 return false 
 end
@@ -5390,7 +5390,7 @@ if tonumber(userid) == tonumber(1706080513) then
 send(msg.chat_id_, msg.id_, " 🦂 لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
-if tonumber(userid) == tonumber(1849335561) then  
+if tonumber(userid) == tonumber(1831228999) then  
 send(msg.chat_id_, msg.id_, " 🦂 لا تسطيع حظر مالك السورس عام")
 return false 
 end
@@ -5439,7 +5439,7 @@ if tonumber(result.sender_user_id_) == tonumber(1706080513) then
 send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مالك السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1849335561) then  
+if tonumber(result.sender_user_id_) == tonumber(1831228999) then  
 send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مالك السورس عام")
 return false 
 end
@@ -5492,7 +5492,7 @@ if tonumber(result.id_) == tonumber(1706080513) then
 send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1849335561) then
+if tonumber(result.id_) == tonumber(1831228999) then
 send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم مالك السورس \n")
 return false 
 end
@@ -5540,7 +5540,7 @@ if tonumber(userid) == tonumber(1236115319) then
 send(msg.chat_id_, msg.id_, " 🌛 ده بابا عيب")
 return false 
 end
-if tonumber(userid) == tonumber(1849335561) then  
+if tonumber(userid) == tonumber(1831228999) then  
 send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مالك السورس عام")
 return false 
 end
