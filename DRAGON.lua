@@ -2687,7 +2687,7 @@ end,nil)
 end,nil) 
 end
 -------------------------------------------------------------------------------------------------------------
-if text == 'تفعيل' and Sudo(msg) then
+if text == 'تفعيل' and Sudo(msg) then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -2776,7 +2776,7 @@ end
 end,nil) 
 end,nil) 
 end
-if text == 'تفعيل' and not Sudo(msg) and not database:get(bot_id..'Free:Bots') then
+if msg.content_.ID == "MessageChatAddMembers" then 
 if AddChannel(msg.sender_user_id_) == false then
 local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
@@ -8288,7 +8288,7 @@ send(msg.chat_id_, msg.id_, ' ⦁ تم تنزيل جميع وتكات الجرو
 end
 if text == ("تاك للوتكات") and Mod(msg) then
 local list = database:smembers(bot_id..'Motte:User'..msg.chat_id_)
-t = "\n ⦁ قائمة وتكات الجروب \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n ⦁ قائمة وتكات الجروب \n≪━━━━☩𝑩??𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -15069,7 +15069,7 @@ local List = {
 ]],
 [[
 𖡋 𝐔𝐒𝐄 #username 
-𖡋 𝐌𝐒𝐆 #msgs 
+𖡋 𝐌??𝐆 #msgs 
 𖡋 𝐒𝐓𝐀 #stast 
 𖡋 𝐈𝐃 #id 
 𖡋 𝐄𝐃𝐈𝐓 #edit
