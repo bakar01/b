@@ -1487,11 +1487,11 @@ return false
 end
 if text == ("مسح المطورين") and DevSoFi(msg) then
 database:del(bot_id..'Sudo:User')
-send(msg.chat_id_, msg.id_, "\n ⦁ تم مسح قائمة المطورين  ")
+send(msg.chat_id_, msg.id_, "\n 🌛 تم مسح قائمة المطورين  ")
 end
 if text == ("المطورين") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n ♡ قائمة المطورين \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n 🌛 قائمة المطورين \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1501,40 +1501,40 @@ t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = " ♡ لا يوجد مطورين"
+t = " 🌛 لا يوجد مطورين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("قائمه العام") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n 🦂 قائمة المحظورين عام \n≪━━━━━━𝑩𝑨𝑲𝑨𝑹━━━━━━≫\n"
+t = "\n 🌛 قائمه المحظورين عام \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
-t = t..""..k.."- (`"..v.."`)\n"
+t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = " 🦂 لا يوجد محظورين عام"
+t = " 🌛 لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
 end
-if text == ("قائمه الكتم العام") and SudoBot(msg) then
+if text == ("قائمه الكتم العام") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
-t = "\n ⦁ قائمة المكتومين عام \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n 🌛 قائمة المكتومين عام \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
 t = t..""..k.."- ([@"..username.."])\n"
 else
-t = t..""..k.."- 「 '..v..' 」\n"
+t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = " ⦁ لا يوجد مكتومين عام"
+t = " 🌛 لا يوجد مكتومين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -14793,7 +14793,7 @@ local List = {
 [[
 - 🇨🇰 𝒖𝒔𝒆𝒓𝒏𝒂𝒎𝒆 . #username 𖣂.
 - 🇨🇰 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
-- 🇨🇰 ??𝒅 . #id 𖣂.
+- 🇨🇰 ???? . #id 𖣂.
 - 🇨🇰 𝒈𝒂𝒎𝒆𝒔 . #game ??.
 - 🇨🇰 𝒎𝒔𝒈𝒔 . #msgs 𖣂.
 ]],
