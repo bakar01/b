@@ -4120,7 +4120,7 @@ tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)
 local rtp = Rutba(userid,msg.chat_id_) 
 local username = ('[@'..data.username_..']' or 'لا يوجد') 
 local iduser = userid 
-send(msg.chat_id_, msg.id_,'  ⦁الايدي ↚ 「'..iduser..'」\n ⦁المعرف ↚ 「'..username..'」\n ⦁الرتبه ↚ 「'..rtp..'」\n ⦁نوع الكشف ↚ بالمعرف') 
+send(msg.chat_id_, msg.id_,'  ⦁الايدي ↚ 「'..iduser..'」\n ⦁المعرف ↚ 「'..username..'」\n ⦁الرتبه ↚ '..rtp..'\n ⦁نوع الكشف ↚ بالمعرف') 
 end,nil) 
 else 
 send(msg.chat_id_, msg.id_,'  ⦁المعرف غير صحيح') 
@@ -5806,7 +5806,7 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ⦁ اهلا بك في متجر ملفات بكار\n ⦁ ملفات السورس ↓\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
+local TextS = "\n ⦁ اهلا بك في متجر ملفات بكار\n ⦁ ملفات السورس ↓\n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n\n"
 local TextE = "\n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n ⦁ علامة تعني { ✔️ } ملف مفعل\n ⦁ علامة تعني { ✖ } ملف معطل\n ⦁ قناة سورس بكار↓\n".." ⦁ [اضغط هنا لدخول](t.me/UU_SD1) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
@@ -8010,7 +8010,7 @@ send(msg.chat_id_, msg.id_, ' ⦁ تم مسح جميع المتوحدين')
 end
 if text == ("تاك للمتوحدين") and Mod(msg) then
 local list = database:smembers(bot_id..'Mote:User'..msg.chat_id_)
-t = "\n ⦁ قائمة متوحدين الجروب \n⧬━┅┅┄⟞❲[??🅞🅞🅽](t.me/UU_SD1)❳⟝┄┉┉━⧬\n"
+t = "\n ⦁ قائمة متوحدين الجروب \n⧬━┅┅┄⟞❲[𝐁𝐀𝐊𝐀𝐑](t.me/UU_SD1)❳⟝┄┉┉━⧬\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -12502,7 +12502,7 @@ end
 if text == ""..(database:get(bot_id..'Name:Bot') or 'بكار').."" then  
 Namebot = (database:get(bot_id..'Name:Bot') or 'بكار')
 local DRAGON_Msg = {
-'نعم يروحي 😻??',
+'نعم يروحي 😻🌚',
 'نعم يا قلب  '..Namebot..'',
 'عاوز اي من '..Namebot..'',
 'دوختو  '..Namebot..'',
@@ -13788,7 +13788,7 @@ local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.id_) or
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,' ⦁ ايديه ⇜「'..iduser..'」\n ⦁ معرفه ⇜「'..username..'」\n ⦁ رتبته ⇜「'..rtp..'」\n ⦁ تعديلاته ⇜('..edit..')\n ⦁ نقاطه ⇜('..NUMPGAME..')\n ⦁ جهاته ⇜('..Contact..')\n ⦁ رسائله ⇜(「'..Msguser..'」)')
+send(msg.chat_id_, msg.id_,' ⦁ ايديه ⇜「'..iduser..'」\n ⦁ معرفه ⇜「'..username..'」\n ⦁ رتبته ⇜'..rtp..'\n ⦁ تعديلاته ⇜('..edit..')\n ⦁ نقاطه ⇜('..NUMPGAME..')\n ⦁ جهاته ⇜('..Contact..')\n ⦁ رسائله ⇜(「'..Msguser..'」)')
 end,nil)
 else
 send(msg.chat_id_, msg.id_,' ⦁ المعرف غير صحيح ')
@@ -13902,7 +13902,7 @@ if not my_ph then
 send(msg.chat_id_, msg.id_," ⦁انا مين معطله") 
 return false  
 end
-send(msg.chat_id_,msg.id_, '[ انت مميز ابن ناس ?? ](t.me/UU_SD1)')
+send(msg.chat_id_,msg.id_, '[ انت مميز ابن ناس 💘 ](t.me/UU_SD1)')
 return false
 end
 
@@ -14000,7 +14000,7 @@ if not my_ph then
 send(msg.chat_id_, msg.id_,"  ") 
 return false  
 end
-send(msg.chat_id_,msg.id_, 'اهلا عزيزي تم قفل المحن بنجاح اتمحونوا بف عشان المراره 😹??') 
+send(msg.chat_id_,msg.id_, 'اهلا عزيزي تم قفل المحن بنجاح اتمحونوا بف عشان المراره 😹💘') 
 return false
 end
 end
@@ -14198,7 +14198,7 @@ if not my_ph then
 send(msg.chat_id_, msg.id_,"  ") 
 return false  
 end
-send(msg.chat_id_,msg.id_, '[انا اجمد ..??💕](t.me/UU_SD1)')
+send(msg.chat_id_,msg.id_, '[انا اجمد ..😎💕](t.me/UU_SD1)')
 return false
 end
 end
@@ -14302,7 +14302,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extr
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
 local username = ' ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
 local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ 「'..rtp..'」*\n')
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ '..rtp..'*\n')
 end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
@@ -14316,7 +14316,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data)
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ 「'..rtp..'」*\n')
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ '..rtp..'*\n')
 end,nil)
 else
 send(msg.chat_id_, msg.id_,'- المعرف غير صحيح ')
@@ -14332,7 +14332,7 @@ tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)
 local rtp = Rutba(userid,msg.chat_id_) 
 local username = ('[@'..data.username_..']' or 'لا يوجد') 
 local iduser = userid 
-send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ 「'..rtp..'」*\n')
+send(msg.chat_id_, msg.id_,'*- الـعـضو  ↭ 「*'..username..'*」\n- الرتبه ↭ '..rtp..'*\n')
 end,nil) 
 else 
 send(msg.chat_id_, msg.id_,' ✧الايدي غير صحيح') 
@@ -14346,7 +14346,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extr
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ 「'..rtp..'」\n✧نوع الكشف ↭ بالرد')
+send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ '..rtp..'\n✧نوع الكشف ↭ بالرد')
 end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
@@ -14360,7 +14360,7 @@ tdcli_function ({ID = "GetUser",user_id_ = result.id_},function(extra,data)
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ 「'..rtp..'」\n✧نوع الكشف ↭ بالمعرف')
+send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ '..rtp..'\n✧نوع الكشف ↭ بالمعرف')
 end,nil)
 else
 send(msg.chat_id_, msg.id_,'✧المعرف غير صحيح')
@@ -14376,7 +14376,7 @@ tdcli_function ({ID = "GetUser",user_id_ = userid},function(extra,data)
 local rtp = Rutba(userid,msg.chat_id_) 
 local username = ('[@'..data.username_..']' or 'لا يوجد') 
 local iduser = userid 
-send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ 「'..rtp..'」\n✧نوع الكشف↭ الايدي')
+send(msg.chat_id_, msg.id_,'✧الايدي ↭ 「'..iduser..'」\n✧المعرف ↭ 「'..username..'」\n✧الرتبه ↭ '..rtp..'\n✧نوع الكشف↭ الايدي')
 end,nil) 
 else 
 send(msg.chat_id_, msg.id_,' ✧الايدي غير صحيح') 
@@ -14758,10 +14758,10 @@ else
 username = 'لا يوجد '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」  ↝💘\n¦• 𝙼𝚂𝙶𝚂↬  「'..Msguser..'」  ↝💘\n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」  ↝💘\n¦• 𝙸𝙳↬   「'..msg.sender_user_id_..'」 ↝💘\n¦• 𝙱𝙸𝙾 ↬ 「'..getbioY..'」 ↝💘\n ¦• 𝒄𝒉↬  「@UU_SD1」   ↝💘\n')
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」  ↝❍\n¦• 𝙼𝚂𝙶𝚂↬  「'..Msguser..'」  ↝❍\n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」  ↝❍\n¦• 𝙸𝙳↬   「'..msg.sender_user_id_..'」 ↝❍\n¦• 𝙱𝙸𝙾 ↬ 「'..getbioY..'」 ↝💘\n ¦• 𝒄𝒉↬  「@UU_SD1」   ↝💘\n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
-send(msg.chat_id_, msg.id_,'[\n ¦✙ بيك عزيزي 「'..Name..'」 \n¦• 𝚄𝚂𝙴𝚁 ↬  「'..Name..'」    ↝💘\n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」.   ↝💘\n ¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」    ↝💘\n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」    ↝💘\n¦• 𝒄𝒉↬   「@UU_SD1」 ↝🇧??\n')
+send(msg.chat_id_, msg.id_,'[\n ¦✙ بيك عزيزي 「'..Name..'」 \n¦• 𝚄𝚂𝙴𝚁 ↬  「'..Name..'」    ↝❍\n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」.   ↝❍\n ¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」    ↝❍\n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」    ↝❍\n¦• 𝒄𝒉↬   「@UU_SD1」 ↝❍\n')
 else
 send(msg.chat_id_, msg.id_, '\n ⦁ الصوره ⇜ ليس لديك صور في حسابك'..'[\n¦• 𝚄𝚂𝙴𝚁 ↬ 「'..username..'」\n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」\n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」\n¦• 𝒄𝒉↬  「@UU_SD1」\n')
 end 
@@ -14782,7 +14782,7 @@ get_id_text = get_id_text:gsub('#game',NUMPGAME)
 get_id_text = get_id_text:gsub('#photos',photps) 
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
-send(msg.chat_id_, msg.id_,'[\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」   ↝💘\n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」   ↝💘\n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」   ↝💘\n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」   ↝💘\n¦• 𝒄𝒉↬ 「@UU_SD1」   ↝💘\n')
+send(msg.chat_id_, msg.id_,'[\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」   ↝❍\n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」   ↝❍\n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」   ↝❍\n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」   ↝❍\n¦• 𝒄𝒉↬ 「@UU_SD1」   ↝❍\n')
 end
 end
 
@@ -15579,7 +15579,7 @@ Msᴀɢ ~ #msgs
 𝐓𝐓• 𝐌𝐬𝐠𝐒 𖠰 #msgs .
 𝐓𝐓• 𝐔𝐬𝐞??𝐍𝐚 𖠰 #username .
 𝐓𝐓• 𝐒𝐓𝐀𝐒𝐓 𖠰 #stast .
-𝐓𝐓• 𝐀𝐔𝐓𝐎 𖠰 #auto .
+𝐓𝐓• 𝐀𝐔𝐓?? 𖠰 #auto .
 𝐓𝐓• 𝗘𝗗𝗜𝗧 𖠰 #edit .
 𝐓𝐓• 𝗖𝗛 - 「@UU_SD1」 ⦁.
 ]],
