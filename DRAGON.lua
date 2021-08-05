@@ -1694,22 +1694,22 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," ⦁ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")
+send(msg.chat_id_,msg.id_," 🌛 عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")
 return false 
 end      
 database:sadd(bot_id..'Sudo:User', result.id_)
-usertext = '\n ⦁ الـعـضو   ↚ ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
-status  = '\n ⦁ تم ترقيته مطور'
+usertext = '\n 🌛 العضو ⤌ ['..result.title_..'](t.me/'..(username or 'textchuser')..')'
+status  = '\n 🌛 تم ترقيته مطور'
 texts = usertext..status
 else
-texts = ' ⦁ لا يوجد حساب بهاذا المعرف'
+texts = ' 🌛 لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -1723,19 +1723,19 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 database:sadd(bot_id..'Sudo:User', userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n ⦁ الـعـضو   ↚ ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n ⦁ تم ترقيته مطور'
+usertext = '\n 🌛 العضو ⤌ ['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+status  = '\n 🌛 تم ترقيته مطور'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n ⦁ الـعـضو   ↚ '..userid..''
-status  = '\n ⦁ تم ترقيته مطور'
+usertext = '\n 🌛 العضو ⤌ '..userid..''
+status  = '\n 🌛 تم ترقيته مطور'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false 
@@ -1747,18 +1747,18 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 if result.id_ then
 database:srem(bot_id..'Sudo:User', result.id_)
-usertext = '\n ⦁ الـعـضو   ↚ ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
-status  = '\n ⦁ تم تنزيله من المطورين'
+usertext = '\n 🌛 العضو ⤌ ['..result.title_..'](t.me/'..(username or 'textchuser')..')'
+status  = '\n 🌛 تم تنزيله من المطورين'
 texts = usertext..status
 else
-texts = ' ⦁ لا يوجد حساب بهاذا المعرف'
+texts = ' 🌛 لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -1772,19 +1772,19 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' ⦁ لا تستطيع استخدام البوت \n ⦁  يرجى الاشتراك بالقناه اولا \n ⦁  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 database:srem(bot_id..'Sudo:User', userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n ⦁ الـعـضو   ↚ ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n ⦁ تم تنزيله من المطورين'
+usertext = '\n 🌛 العضو ⤌ ['..data.first_name_..'](t.me/'..(data.username_ or 'textchuser')..')'
+status  = '\n 🌛 تم تنزيله من المطورين'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n ⦁ الـعـضو   ↚ '..userid..''
-status  = '\n ⦁ تم تنزيله من المطورين'
+usertext = '\n 🌛 العضو ⤌ '..userid..''
+status  = '\n 🌛 تم تنزيله من المطورين'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false 
@@ -14793,7 +14793,7 @@ local List = {
 [[
 - 🇨🇰 𝒖𝒔𝒆𝒓𝒏𝒂𝒎𝒆 . #username 𖣂.
 - 🇨🇰 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
-- 🇨🇰 ???? . #id 𖣂.
+- 🇨🇰 ??𝒅 . #id 𖣂.
 - 🇨🇰 𝒈𝒂𝒎𝒆𝒔 . #game ??.
 - 🇨🇰 𝒎𝒔𝒈𝒔 . #msgs 𖣂.
 ]],
