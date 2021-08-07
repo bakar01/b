@@ -13842,43 +13842,233 @@ send(msg.chat_id_,msg.id_, '[انت مطوري نور عنيا🥺🤍](t.me/UU_
 return false
 end
 
+if text == 'انا مين' and SudoBot(msg) then
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت مطوري نور عنيا🥺🤍](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
+return false
+end
+
 if text == 'انا مين' and DevSoFi(msg) then 
-send(msg.chat_id_,msg.id_, '[انت مطوري الثاني حته مني 😍💚](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت مطوري الثاني حته مني 😍💚](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and Sudo(msg) then 
-send(msg.chat_id_,msg.id_, '[انت المطور بس الصغنن 🌝💘](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت المطور بس الصغنن 🌝💘](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and CoSu(msg) then 
-send(msg.chat_id_,msg.id_, '[نت المالك هن يعني حاجه فوق فوق راسي 😂♥](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[نت المالك هن يعني حاجه فوق فوق راسي 😂♥](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and Constructor(msg) then 
-send(msg.chat_id_,msg.id_, '[انت منشئ يسطا عتلاء منشئ عاوز حاجه تانيه??🤦‍♂️](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت منشئ يسطا عتلاء منشئ عاوز حاجه تانيه??🤦‍♂️](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and BasicConstructor(msg) then 
-send(msg.chat_id_,msg.id_, '[ انت هنا منشئ اساسي يعني اعلى رتبه عاوزك تفتخر😂🎯](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[ انت هنا منشئ اساسي يعني اعلى رتبه عاوزك تفتخر😂🎯](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and Manager(msg) then 
-send(msg.chat_id_,msg.id_, '[ انت المدير يعني الروم تحت سيطرتك😹](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[ انت المدير يعني الروم تحت سيطرتك😹](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and Mod(msg) then 
-send(msg.chat_id_,msg.id_, '[انت مجرد ادمن اجتهد عشان ياخد رتبه😹 ](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت مجرد ادمن اجتهد عشان ياخد رتبه😹 ](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
 if text == 'انا مين' and Special(msg) then 
-send(msg.chat_id_,msg.id_, '[ انت مميز ابن ناس 😊 ](t.me/UU_SD1)') 
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[ انت مميز ابن ناس 😊 ](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
+return false
+end
+
+if text == 'انا مين' then
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[ عضو قميل 🌝💘 ](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 return false
 end
 
@@ -15066,7 +15256,7 @@ local List = {
 [[
 ¦• 𝚄𝚂𝙴𝚁  ⇉⁞ #username ↝🇪??.
 ¦• 𝙼𝚂𝙶𝚂 ⇉ ⁞  #msgs  ↝ 🇪🇬.
-¦• ??𝙰𝙽𝙺  ⇉⁞ #stast  ↝🇪🇬.
+¦• 𝚁𝙰𝙽𝙺  ⇉⁞ #stast  ↝🇪🇬.
 ¦• 𝙸𝙳 𝚂𝚃𝙰 ⇉ #id  ↝🇪🇬.
 ¦• 𝗖𝗛 - 「@UU_SD1」 🌕.
 ]],
@@ -15504,7 +15694,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 🇪🇬≪💎≫ #username • メ
-🇪🇬≪💎≫ #stast  •メ
+??🇬≪💎≫ #stast  •メ
 🇪🇬≪💎≫ #id  • メ
 🇪🇬≪💎≫ #msgs  •メ
 🇪🇬≪💎≫ #game •メ
