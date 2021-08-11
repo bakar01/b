@@ -13779,7 +13779,7 @@ local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.sender_
 local rtp = Rutba(result.sender_user_id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.sender_user_id_
-send(msg.chat_id_, msg.id_,' 🌕 ايديه ⇜ '..iduser..'\n 🌕 معرفه ⇜ 「'..username..'」\n 🌕 رتبته ⇜ '..rtp..'\n 🌕 تعديلاته ⇜ '..edit..'\n 🌕 نقاطه ⇜ '..NUMPGAME..'\n 🌕 جهاته ⇜ '..Contact..'\n 🌕 رسائله ⇜ 「'..Msguser..'」')
+send(msg.chat_id_, msg.id_,' 🌕 ايديه ~⪼ '..iduser..'\n 🌕 معرفه ~⪼ '..username..'\n 🌕 رتبته ~⪼ '..rtp..'\n 🌕 تعديلاته ~⪼ '..edit..'\n 🌕 نقاطه ~⪼ '..NUMPGAME..'\n 🌕 جهاته ~⪼ '..Contact..'\n 🌕 رسائله ~⪼ '..Msguser..'')
 end,nil)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
@@ -13787,11 +13787,11 @@ end
 if text and text:match("^ايدي @(.*)$") then
 local username = text:match("^ايدي @(.*)$")
 if AddChannel(msg.sender_user_id_) == false then
-local textchuser = database:get(bot_id..'text:ch:user')
-if textchuser then
-send(msg.chat_id_, msg.id_,'['..textchuser..']')
+local UU_SD1 = database:get(bot_id..'text:ch:user')
+if UU_SD1 then
+send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌕 لا تستطيع استخدام البوت \n 🌕  يرجى الاشتراك بالقناه اولا \n 🌕  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌕 لا تستطيع استخدام البوت \n  🌕 يرجى الاشتراك بالقناه اولا \n  🌕 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -13805,7 +13805,7 @@ local edit = tonumber(database:get(bot_id..'edits'..msg.chat_id_..result.id_) or
 local rtp = Rutba(result.id_,msg.chat_id_)
 local username = ('[@'..data.username_..']' or 'لا يوجد')
 local iduser = result.id_
-send(msg.chat_id_, msg.id_,' 🌕 ايديه ⇜「'..iduser..'」\n 🌕 معرفه ⇜「'..username..'」\n 🌕 رتبته ⇜'..rtp..'\n 🌕 تعديلاته ⇜('..edit..')\n 🌕 نقاطه ⇜('..NUMPGAME..')\n 🌕 جهاته ⇜('..Contact..')\n 🌕 رسائله ⇜(「'..Msguser..'」)')
+send(msg.chat_id_, msg.id_,' 🌕 ايديه ~⪼('..iduser..')\n 🌕 معرفه ~⪼('..username..')\n 🌕 رتبته ~⪼('..rtp..')\n 🌕 تعديلاته ~⪼('..edit..')\n 🌕 نقاطه ~⪼('..NUMPGAME..')\n 🌕 جهاته ~⪼('..Contact..')\n 🌕 رسائله ~⪼('..Msguser..')')
 end,nil)
 else
 send(msg.chat_id_, msg.id_,' 🌕 المعرف غير صحيح ')
@@ -13817,8 +13817,32 @@ end
 
 if text == 'رتبتي' then
 local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
-send(msg.chat_id_, msg.id_,' 🕊 رتبتك في البوت ← '..rtp)
+send(msg.chat_id_, msg.id_,' 🌕 رتبتك في البوت ← '..rtp)
 end
+
+if tonumber(msg.sender_user_id_) == tonumber(1936946115) then
+if text == 'انا مين' then
+local msg_id = msg.id_/2097152/0.5  
+local textt = '[انت المبرمج نن عيني 🥺🤍](t.me/UU_SD1)'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'الـمـطـور♡', url="http://t.me/"..sudos.UserName},
+},
+{
+{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
+}
+local function getpro(extra, result, success) 
+if result.photos_[0] then 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else 
+send(msg.chat_id_, msg.id_,textt, 1, 'md') 
+end 
+end 
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
+return false
+end end
 
 if text == 'انا مين' and SudoBot(msg) then
 local msg_id = msg.id_/2097152/0.5  
@@ -15450,7 +15474,7 @@ Msᴀɢ ~ #msgs
 𓄼 𝗖𝗛 - 「@UU_SD1」 🌕.
 ]],
 [[
-𝐓𝐓• 𝐘𝐎𝐔𝐑 𝐈𝐃 𖠰 #id .
+??𝐓• 𝐘𝐎𝐔𝐑 𝐈𝐃 𖠰 #id .
 𝐓𝐓• 𝐌𝐬𝐠𝐒 𖠰 #msgs .
 𝐓𝐓• 𝐔𝐬𝐞??𝐍𝐚 𖠰 #username .
 𝐓𝐓• 𝐒𝐓𝐀𝐒𝐓 𖠰 #stast .
@@ -17316,7 +17340,7 @@ local Teext =[[
 اهـــلا بـــك فــي اوامــر تــفــعــيــل و تـــعــطــيــل🔥
 اوامـــر الــمـــطـــور الـــاســـــاســــي🔥
 🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
-تـــفـــعـــيــل💝
+تـــفـــعـــيــل??
 تـــعـــطـــيــــل💝
 مـــســـح الـاســـاســيـــين💝
 الــمـــنــشــئـين الــاســاســـيــن 💝
