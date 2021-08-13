@@ -3265,7 +3265,6 @@ keyboard.inline_keyboard = {
 {
 {text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/S_1_1M"},
 },
-{
 {text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
 },
 local msg_id = msg.id_/2097152/0.5
@@ -11049,7 +11048,7 @@ return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 usertext = '\n 🌕  الـعـضو   ↚ ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌕  الايدي  ↚ `'..result.sender_user_id_..'`\n ??  تم تنزيله ادمن من الجروب بكل الصلاحيات'
+status  = '\n 🌕  الايدي  ↚ `'..result.sender_user_id_..'`\n 🌕  تم تنزيله ادمن من الجروب بكل الصلاحيات'
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 end,nil)
@@ -14339,7 +14338,7 @@ local username = text:match("^صيح (.*)$")
 if not database:get(bot_id..'Seh:User'..msg.chat_id_) then
 function start_function(extra, result, success)
 if result and result.message_ and result.message_ == "USERNAME_NOT_OCCUPIED" then 
-send(msg.chat_id_, msg.id_,' ?? المعرف غلط ') 
+send(msg.chat_id_, msg.id_,' 🌕 المعرف غلط ') 
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
