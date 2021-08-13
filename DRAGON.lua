@@ -14650,7 +14650,7 @@ else
 username = 'لا يوجد '
 end
 if result.status_.ID == "UserStatusRecently" and result.profile_photo_ ~= false then
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」  \n¦• 𝙼𝚂𝙶𝚂↬  「'..Msguser..'」 \n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」 \n¦• 𝙸𝙳↬   「'..msg.sender_user_id_..'」\n¦• 𝙱𝙸𝙾 ↬ 「'..getbioY..'」\n ¦• 𝒄𝒉↬  【@UU_SD1】 \n')
+sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, sofi.photos_[0].sizes_[1].photo_.persistent_id_,''..rdphoto..'\nᴜѕᴇʀɴᴀᴍᴇ ➣  '..username..' \n¦• ᴍѕɢѕ ➣ '..Msguser..' \n¦• ѕᴛᴀᴛѕ ➣'..Rutba(msg.sender_user_id_,msg.chat_id_)..' \nʏᴏᴜʀ ɪᴅ ➣'..msg.sender_user_id_..' \n¦• ʙɪᴏ ➣ '..getbioY..' \n ¦• ᴄʜ  ➣【@UU_SD1】 \n')
 else 
 if result.status_.ID == "UserStatusEmpty" and result.profile_photo_ == false then
 send(msg.chat_id_, msg.id_,'[\n ¦✙ بيك عزيزي 「'..Name..'」 \n¦• 𝚄𝚂𝙴𝚁 ↬  「'..Name..'」  \n¦• 𝙼𝚂𝙶𝚂↬ 「'..Msguser..'」\n ¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」 \n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」 \n¦• 𝒄𝒉↬   【@UU_SD1】\n')
@@ -15507,7 +15507,7 @@ Msᴀɢ ~ #msgs
 [[
 𖤍 |↶ #id    ꙰🇪🇬.
 𖤍 |↶ #username    ꙰🇪🇬.
-𖤍 |↶ #msgs    ꙰??🇬.
+𖤍 |↶ #msgs    ꙰🇪🇬.
 𖤍 |↶ #stast    ꙰🇪🇬.
 𖤍 |↶ 𝗖𝗛 - 「@UU_SD1」 🌕
 ]],
@@ -17766,7 +17766,7 @@ local Teext =[[
  🌕   صورتي ⇔ نسبه جمالي
  🌕   نقاطي
  🌕    مسح ⇔ بيع ❲نقاطي ❳ 
- ??   رسائلي ⇔  مسح ❲رسائلي ❳ 
+ 🌕   رسائلي ⇔  مسح ❲رسائلي ❳ 
  🌕   زخرفه ⇔ اغاني 
  🌕   اسمي ⇔ الرتبه
  🌕  جهاتي 
