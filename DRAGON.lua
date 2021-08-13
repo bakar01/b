@@ -3251,7 +3251,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam/5&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'المبرمج مسلم' or text == 'المبرمج المسلم' or text == 'المسلم' or text == 'مسلم' then
+if text ==  'المبرمج مسلم' or text == 'المسلم' or text == 'مسلم' or text == 'المبرمج المسلم' then
 local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
@@ -3259,14 +3259,14 @@ else
 tdcli_function ({ID = "GetUser",user_id_ = 1936946115,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
-local Name = 'المبرمج \n['..result.first_name_..'](t.me/S_1_1M)\n'
+local Name = 'المبرمج 🌚💘\n['..result.first_name_..'](t.me/S_1_1M)\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
 {text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/S_1_1M"},
 },
-{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
-},
+{{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
+}
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
