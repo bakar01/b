@@ -3252,17 +3252,30 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 
 if text == 'المبرمج مسلم' or text == 'المبرمج المسلم' or text == 'المسلم' or text == 'مسلم' then
-local Text = [[
-[المبرمج سمير المسلم لو حبب تتواصل معاه اتبع الزر اللي تحت](t.me/S_31_m)
-
-]]
+local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
+if TEXT_SUDO then 
+send(msg.chat_id_, msg.id_,TEXT_SUDO)
+else
+tdcli_function ({ID = "GetUser",user_id_ = 1936946115,},function(arg,result) 
+local function taha(extra, taha, success)
+if taha.photos_[0] then
+local Name = 'المبرمج \n['..result.first_name_..'](t.me/S_1_1M)\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '˹M U S L I M ˼',url="t.me/S_31_m"}},
-{{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-}
+{
+{text = '  ❨ '..result.first_name_..'  ❩ ',url="t.me/S_1_1M"},
+},
+{
+{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
+},
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam/5&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.chat_id_..'&caption='..URL.escape(Name)..'&photo='..taha.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
+ end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1936946115, offset_ = 0, limit_ = 1 }, taha, nil)
+end,nil)
+end
 end
 
 if text == 'قناه السورس' or text == 'قناة السورس' or text == '≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫' then
@@ -11036,7 +11049,7 @@ return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 usertext = '\n 🌕  الـعـضو   ↚ ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌕  الايدي  ↚ `'..result.sender_user_id_..'`\n 🌕  تم تنزيله ادمن من الجروب بكل الصلاحيات'
+status  = '\n 🌕  الايدي  ↚ `'..result.sender_user_id_..'`\n ??  تم تنزيله ادمن من الجروب بكل الصلاحيات'
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/promoteChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..result.sender_user_id_.."&can_change_info=false&can_delete_messages=false&can_invite_users=false&can_restrict_members=false&can_pin_messages=false&can_promote_members=false")
 end,nil)
@@ -14326,7 +14339,7 @@ local username = text:match("^صيح (.*)$")
 if not database:get(bot_id..'Seh:User'..msg.chat_id_) then
 function start_function(extra, result, success)
 if result and result.message_ and result.message_ == "USERNAME_NOT_OCCUPIED" then 
-send(msg.chat_id_, msg.id_,' 🌕 المعرف غلط ') 
+send(msg.chat_id_, msg.id_,' ?? المعرف غلط ') 
 return false  
 end
 if result and result.type_ and result.type_.channel_ and result.type_.channel_.ID == "Channel" then
@@ -15070,7 +15083,7 @@ local List = {
 🇪🇬 ꙰  - 𝚞 𝚜𝚎 𝚛 ➟ #username  ❃.
 🇪🇬 ꙰  - 𝚖 𝚜𝚐 𝚜 ➟ #msgs ❃.
 🇪🇬 ꙰  - 𝚐 𝚖 𝚊𝚜  ➟ #stast ❃.
-🇪?? ꙰  - 𝙸𝙳 𝚜𝚝𝚊   ➟ #id ❃.
+🇪🇬 ꙰  - 𝙸𝙳 𝚜𝚝𝚊   ➟ #id ❃.
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 🇪🇬 ꙰  - 𝗖𝗛 - 「@UU_SD1」 🌕.
 ]],
@@ -15960,7 +15973,7 @@ Msᴀɢ ~ #msgs
 [[
 ➜𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘 : #username
 ➜𝗠𝗘𝗦𝗦??𝗚𝗘𝗦 : #msgs
-➜𝗦𝗧??𝗧𝗦 : #stast
+➜𝗦𝗧𝗔𝗧𝗦 : #stast
 ➜𝗜𝗗 : #id
 ➜𝗖𝗛 - 「@UU_SD1」 🌕
 ]],
