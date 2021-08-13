@@ -5297,40 +5297,18 @@ dofile('DRAGON.lua')
 send(msg.chat_id_, msg.id_, ' 🌕 تم تحديث جميع الملفات') 
 end 
 if text == ("مسح قائمه العام") and DevSoFi(msg) then
-database:del(bot_id..'GDRG:User')
-send(msg.chat_id_, msg.id_, '\n 🌕 تم مسح قائمه العام')
+database:del(bot_id..'GBan:User')
+send(msg.chat_id_, msg.id_, '\n ♡ تم مسح قائمه العام')
 return false
 end
-if text == ("مسح الحظر العام") and DevSoFi(msg) then
-database:del(bot_id..'GDRG:User')
-send(msg.chat_id_, msg.id_, '\n 🌕 تم مسح الحظر العام')
-return false
-end
-if text == ("مسح الكتم العام") and DevSoFi(msg) then
-database:del(bot_id..'GDRG:User')
-send(msg.chat_id_, msg.id_, '\n 🌕 تم مسح الكتم العام')
-return false
-end
-if text == ("قائمه العام") and DevSoFi(msg) then
-local list = database:smembers(bot_id..'GBan:User')
-t = "\n 🌛 قائمه عام \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
-for k,v in pairs(list) do
-local username = database:get(bot_id.."user:Name" .. v)
-if username then
-t = t..""..k.."- ([@"..username.."])\n"
-else
-t = t..""..k.."- ("..v..")\n"
-end
-end
-if #list == 0 then
-t = " 🌛 لا يوجد احد ف قائمه العام"
-end
-send(msg.chat_id_, msg.id_, t)
+if text == ("مسح قائمه الكتم العام") and DevSoFi(msg) then
+database:del(bot_id..'Gmute:User')
+send(msg.chat_id_, msg.id_, '\n ♡ تم مسح قائمه المكتومين عام')
 return false
 end
 if text == ("قائمه الكتم العام") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
-t = "\n 🌛 قائمة المكتومين عام \n≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫\n"
+t = "\n ♡ قائمة المكتومين عام \n◤━───━𝑬𝑳??𝑼𝑺𝑳𝑰𝑴━───━◥\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5340,7 +5318,24 @@ t = t..""..k.."- ("..v..")\n"
 end
 end
 if #list == 0 then
-t = " 🌛 لا يوجد مكتومين عام"
+t = " ♡ لا يوجد مكتومين عام"
+end
+send(msg.chat_id_, msg.id_, t)
+return false
+end
+if text == ("قائمه العام") and DevSoFi(msg) then
+local list = database:smembers(bot_id..'GBan:User')
+t = "\n ♡ قائمة المحظورين عام \n◤━───━𝑬𝑳𝑴𝑼𝑺𝑳𝑰𝑴━───━◥\n"
+for k,v in pairs(list) do
+local username = database:get(bot_id.."user:Name" .. v)
+if username then
+t = t..""..k.."- ([@"..username.."])\n"
+else
+t = t..""..k.."- (`"..v.."`)\n"
+end
+end
+if #list == 0 then
+t = " ♡ لا يوجد محظورين عام"
 end
 send(msg.chat_id_, msg.id_, t)
 return false
@@ -5415,15 +5410,15 @@ if result.id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1936946115) then
+if result.id_ == tonumber(1936946115) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1831228999) then
-send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر مالك السورس \n")
+if result.id_ == tonumber(1831228999) then
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر مالك السورس\n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1180682052) then
+if result.id_ == tonumber(1180682052) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر مطور السورس \n")
 return false 
 end
@@ -5460,7 +5455,7 @@ send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر البوت عام")
 return false 
 end
 if tonumber(userid) == tonumber(1936946115) then  
-send(msg.chat_id_, msg.id_, " لا تسطيع حظر مبرمج السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
 if tonumber(userid) == tonumber(1831228999) then  
@@ -5491,36 +5486,36 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم المطور الاساسي \n")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم البوت عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم البوت عام")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(1936946115) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مبرمج السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(1831228999) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مالك السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مالك السورس عام")
 return false 
 end
 if tonumber(result.sender_user_id_) == tonumber(1180682052) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مطور السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مطور السورس عام")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},
 function(arg,data) 
-usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
+status  = '\n ♡ تم كتمه عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 end
@@ -5535,42 +5530,42 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
-send(msg.chat_id_,msg.id_," 🌛 عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+send(msg.chat_id_,msg.id_," ♡ عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
 return false 
 end      
 if tonumber(result.id_) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم البوت عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم البوت عام")
 return false 
 end
 if result.id_ == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم المطور الاساسي \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1936946115) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم مبرمج السورس \n")
+if result.id_ == tonumber(1936946115) then
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1831228999) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم مالك السورس \n")
+if result.id_ == tonumber(1831228999) then
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
-if tonumber(result.id_) == tonumber(1180682052) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم مطور السورس \n")
+if result.id_ == tonumber(1831228999) then
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم مطور السورس \n")
 return false 
 end
-usertext = '\n 🌛 العضو ← ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
-status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
+status  = '\n ♡ تم كتمه عام من {'..Groups..'} مجموعه'
 texts = usertext..status
 database:sadd(bot_id..'Gmute:User', result.id_)
 else
-texts = ' 🌛 لا يوجد حساب بهاذا المعرف'
+texts = ' ♡ لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5585,39 +5580,39 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 if tonumber(userid) == tonumber(SUDO) then
-send(msg.chat_id_, msg.id_, " 🌛 لا يمكنك كتم المطور الاساسي \n")
+send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم المطور الاساسي \n")
 return false 
 end
 if tonumber(userid) == tonumber(bot_id) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم البوت عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم البوت عام")
 return false 
 end
 if tonumber(userid) == tonumber(1936946115) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مبرمج السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
 if tonumber(userid) == tonumber(1831228999) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مالك السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مالك السورس عام")
 return false 
 end
 if tonumber(userid) == tonumber(1180682052) then  
-send(msg.chat_id_, msg.id_, " 🌛 لا تسطيع كتم مطور السورس عام")
+send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مطور السورس عام")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
+status  = '\n ♡ تم كتمه عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n 🌛 العضو ← '..userid..''
-status  = '\n 🌛 تم كتمه عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← '..userid..''
+status  = '\n ♡ تم كتمه عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
@@ -5629,14 +5624,14 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌛 تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
+status  = '\n ♡ تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
 database:srem(bot_id..'GBan:User', result.sender_user_id_)
@@ -5653,19 +5648,19 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
 function start_function(extra, result, success)
 if result.id_ then
-usertext = '\n 🌛 العضو ← ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
-status  = '\n 🌛 تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..result.title_..'](t.me/'..(username or 'UU_SD1')..')'
+status  = '\n ♡ تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
 texts = usertext..status
 database:srem(bot_id..'GBan:User', result.id_)
 database:srem(bot_id..'Gmute:User', result.id_)
 else
-texts = ' 🌛 لا يوجد حساب بهاذا المعرف'
+texts = ' ♡ لا يوجد حساب بهاذا المعرف'
 end
 send(msg.chat_id_, msg.id_, texts)
 end
@@ -5680,7 +5675,7 @@ local UU_SD1 = database:get(bot_id..'text:ch:user')
 if UU_SD1 then
 send(msg.chat_id_, msg.id_,'['..UU_SD1..']')
 else
-send(msg.chat_id_, msg.id_,' 🌛 لا تستطيع استخدام البوت \n  🌛 يرجى الاشتراك بالقناه اولا \n  🌛 اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' ♡ لا تستطيع استخدام البوت \n  ♡ يرجى الاشتراك بالقناه اولا \n  ♡ اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -5688,12 +5683,12 @@ database:srem(bot_id..'GBan:User', userid)
 database:srem(bot_id..'Gmute:User', userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n 🌛 العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
-status  = '\n 🌛 تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← ['..data.first_name_..'](t.me/'..(data.username_ or 'UU_SD1')..')'
+status  = '\n ♡ تم الغاء (الحظر-الكتم) عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
-usertext = '\n 🌛 العضو ← '..userid..''
-status  = '\n 🌛 تم حظره عام من {'..Groups..'} مجموعه'
+usertext = '\n ♡ العضو ← '..userid..''
+status  = '\n ♡ تم حظره عام من {'..Groups..'} مجموعه'
 send(msg.chat_id_, msg.id_, usertext..status)
 end;end,nil)
 return false
@@ -15937,7 +15932,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 ⭐️𝖘𝖙𝖆 : #stast ـ🍭
-⭐️𝖚𝖘𝖊𝖗𝖓𝖆𝖒𝖊 : #username ـ🍭
+⭐️𝖚𝖘𝖊𝖗𝖓𝖆𝖒𝖊 : #username ـ??
 ⭐️𝖒𝖘𝖌𝖘 : #msgs ـ🍭
 ⭐️𝖎𝖉 : #id ـ 🍭
 ⭐️𝗖𝗛 - 「@UU_SD1」 🌕
