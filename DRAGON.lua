@@ -2681,7 +2681,7 @@ local NameChat = NameChat:gsub("","")
 local NameChat = NameChat:gsub("*","")  
 local NameChat = NameChat:gsub("{","")  
 local NameChat = NameChat:gsub("}","")  
-sendText(msg.chat_id_,"🌕تم طرد البوت من جروب \n\n🌕بواسطة  {"..Name.."}\n🌕اسم الجروب {"..NameChat.."}\n🌕ايدي الجروب {"..msg.chat_id_.."} ",0,'md')  
+sendText(SUDO,"🌕تم طرد البوت من جروب \n\n🌕بواسطة  {"..Name.."}\n🌕اسم الجروب {"..NameChat.."}\n🌕ايدي الجروب {"..msg.chat_id_.."} ",0,'md')  
 end,nil) 
 end,nil) 
 end
@@ -6464,7 +6464,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' 🌕 لا تستطيع استخدام البوت \n 🌕  يرجى الاشتراك بالقناه اولا \n 🌕  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 🌕 لا تستطيع استخدام البوت \n ??  يرجى الاشتراك بالقناه اولا \n 🌕  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -14380,24 +14380,12 @@ send(msg.chat_id_, msg.id_,' 🌕 عذرا لا استطيع طرد ادمنية
 return false  
 end
 if data and data.ID and data.ID == 'Ok' then
-send(msg.chat_id_, msg.id_,'🌕 تم طردك من الجروب وقمت بارسال رابط الروم لك فى الخاص عشان لو حابب ترجع') 
-local abc = msg.id_/2097152/0.5
-https.request('https://api.telegram.org/bot'..token..'/sendanimation?chat_id='..msg.chat_id_..'&reply_to_message_id='..abc..'&animation=https://t.me/U5iAR/4')
-local link = database:get(bot_id.."Private:Group:Link"..msg.chat_id_)            
-if link then                              
-local romkink ='لينك الروم اللى اطردت منو❤️🥺  ['..link..']'
-https.request('https://api.telegram.org/bot'..token..'/sendMessage?chat_id='..msg.sender_user_id_..'&text='..romkink)                          
-else                
-local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
-if linkgpp.ok == true then 
-database:set(bot_id.."Private:Group:Link"..msg.chat_id_,linkgpp.result)
-linkgp = 'لينك الروم اللى اطردت منو❤️🥺  ['..linkgpp.result..']'
-https.request('https://api.telegram.org/bot'..token..'/sendMessage?chat_id='..msg.sender_user_id_..'&text='..linkgp) 
+send(msg.chat_id_, msg.id_,' 🌕 تم طردك من الجروب') 
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = msg.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,DRG) end,nil)   
+return false
+end
+end,nil)   
 else
-linkgp = '🌕 سورى الروم اللى اطردت منو لايوجد له رابط❤️🥺'
-https.request('https://api.telegram.org/bot'..token..'/sendMessage?chat_id='..msg.sender_user_id_..'&text='..linkgp) 
-end               
-end 
 send(msg.chat_id_, msg.id_,' 🌕 تم تعطيل امر اطردني') 
 end
 end
@@ -15456,7 +15444,7 @@ Msᴀɢ ~ #msgs
 - 🇪🇬 𝗖𝗛 - 「@UU_SD1」 🌕.
 ]],
 [[
-🇪🇬 - 𝄬 username . #username  𓃠
+🇪🇬 - 𝄬 username . #username  ??
 🇪🇬 - 𝄬 stast . #stast  ??
 🇪🇬 - ?? id . #id 𓃠
 🇪🇬 - 𝄬 gmas . #gmas 𓃠
