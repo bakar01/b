@@ -14395,7 +14395,35 @@ send(msg.chat_id_, msg.id_, sofi)
 end,nil)
 end,nil)
 end 
-
+if text == 'اطردني' or text == 'طلعني' then
+if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
+if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
+send(msg.chat_id_, msg.id_, '\n 🌕 عذرا لا استطيع طرد ( '..Rutba(msg.sender_user_id_,msg.chat_id_)..' )')
+return false
+end
+tdcli_function({ID="ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=msg.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,data) 
+if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
+send(msg.chat_id_, msg.id_,' 🌕 ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !') 
+return false  
+end
+if (data and data.code_ and data.code_ == 3) then 
+send(msg.chat_id_, msg.id_,' 🌕 البوت ليس ادمن يرجى ترقيتي !') 
+return false  
+end
+if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
+send(msg.chat_id_, msg.id_,' 🌕 عذرا لا استطيع طرد ادمنية الجروب') 
+return false  
+end
+if data and data.ID and data.ID == 'Ok' then
+send(msg.chat_id_, msg.id_,' 🌕 تم طردك من الجروب') 
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = msg.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,DRG) end,nil)   
+return false
+end
+end,nil)   
+else
+send(msg.chat_id_, msg.id_,' 🌕 تم تعطيل امر اطردني') 
+end
+end
 if text and text:match("^صيح (.*)$") then
 local username = text:match("^صيح (.*)$") 
 if not database:get(bot_id..'Seh:User'..msg.chat_id_) then
@@ -14749,7 +14777,7 @@ get_id_text = get_id_text:gsub('#game',NUMPGAME)
 get_id_text = get_id_text:gsub('#photos',photps) 
 send(msg.chat_id_, msg.id_,'['..get_id_text..']')   
 else
-send(msg.chat_id_, msg.id_,'[\n¦• 𝚄??𝙴𝚁 ↬  「'..username..'」 n¦• ??𝚂𝙶𝚂↬ 「'..Msguser..'」 \n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」 \n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」 \n¦• 𝒄𝒉↬ 【@UU_SD1】 \n')
+send(msg.chat_id_, msg.id_,'[\n¦• 𝚄𝚂𝙴𝚁 ↬  「'..username..'」 n¦• ??𝚂𝙶𝚂↬ 「'..Msguser..'」 \n¦• 𝚁𝙰𝙽𝙺↬ 「'..Rutba(msg.sender_user_id_,msg.chat_id_)..'」 \n¦• 𝙸𝙳↬  「'..msg.sender_user_id_..'」 \n¦• 𝒄𝒉↬ 【@UU_SD1】 \n')
 end
 end
 
@@ -14939,7 +14967,7 @@ local List = {
 金 - 𝓼𝓽𝓪𝓼𝓽  . #stast ⸙ 
 金 - 𝓲𝓭 . #id ⸙ 
 金 - 𝓰𝓶𝓪𝓼 . #gmas ⸙ 
-金 - 𝓶𝓼𝓰𝓼 . #msgs ⸙
+金 - 𝓶𝓼??𝓼 . #msgs ⸙
 ]],
 [[
 🇯🇵 - 𝄬 username . #username  𓃠
@@ -15895,7 +15923,7 @@ Msᴀɢ ~ #msgs
 [[
 ⚕𝙐𝙎𝙀𝙍??𝘼𝙈𝙀 : #username
 ⚕𝙈𝙀𝙎𝙎??𝙂𝙀𝙎 : #msgs
-⚕𝙎𝙏𝘼??𝙎 : #stast
+⚕𝙎𝙏𝘼𝙏𝙎 : #stast
 ⚕𝙄𝘿 : #id
 ⚕??????𝙀𝙇𝙎 : #game
 ⚕𝘿𝙀𝙑 : #ridha
@@ -16730,33 +16758,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 ----------------------------------------------------------------------------
-if text == 'نزلني' or text == 'نزيلني' and GetChannelMember(msg) then 
-if not bot_data:get(ban_id..'Cick:Me'..msg.chat_id_) then 
-local Text = ": هل انت متاكد  من تنزيلك من جميع الرتب: "
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text="نعم",callback_data="nzllne"..msg.sender_user_id_},{text="لا",callback_data="noKikedMe"..msg.sender_user_id_}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end 
-end
-if text == 'اطردني' or text == 'طردني' and GetChannelMember(msg) then   
-if not bot_data:get(ban_id..'Cick:Me'..msg.chat_id_) then
-if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
-send(msg.chat_id_, msg.id_, '\n ●عذرا لا استطيع طرد ( '..Rutba(msg.sender_user_id_,msg.chat_id_)..' )')
-return false
-end
-local Text = "قم بتأكيد العمليه الان"
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text="تأكيد الامر",callback_data="OkKikedMe"..msg.sender_user_id_},{text="الغاء الامر",callback_data="noKikedMe"..msg.sender_user_id_}},
-}
-local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
-
 if text == 'الالعاب' then
 local Text = [[
 🎮 اهلا بك في قسم الالعاب ..↑↓
@@ -17278,63 +17279,6 @@ keyboard.inline_keyboard = {
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 
-if Text == 'EndAddarray'..data.sender_user_id_ then  
-if bot_data:get(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id) == 'true1' then
-bot_data:del(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-end
-if Text == 'OkKikedMe'..data.sender_user_id_ then  
-tdcli_function({ID="ChangeChatMemberStatus",chat_id_=Chat_id,user_id_=data.sender_user_id_,status_={ID="ChatMemberStatusKicked"},},function(arg,data) 
-if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if (data and data.code_ and data.code_ == 3) then 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙البوت ليس ادمن يرجى ترقيتي !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙عذرا لا استطيع طرد ادمنية الكروب*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-if data and data.ID and data.ID == 'Ok' then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم الطرد بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-end,nil)   
-end
-if Text == 'noKikedMe'..data.sender_user_id_ then  
-local Text ="● تم الغاء الأمر بنجاح "
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '•ᴄʜ♪',url='http://t.me/p_120o'}},
-}
-return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-
 if Text == '/help3' then
 if not Mod(data) then
 local notText = '✘ عذرا الاوامر هذه لا تخصك'
@@ -17630,7 +17574,7 @@ local Teext =[[
 قــــول+كــــــلـــمـــه😎
 🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
 اســــم الـــبـــوت +الــامـــر🌍
-🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
+🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ ??
 بــــوســــه بـــالـــرد🎗️
 مــــصـــه بـــالـــرد🎗️
 رزلـــه بــــالــرد🎗️
