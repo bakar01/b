@@ -17816,7 +17816,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'B A T O T',url="t.me/ba_to_t"},{text = 'H A M O', url="t.me/H_1_0O"}},
-{{text = ' B O T B A T O T',url="t.me/Batot_51_bot"},{text = 'B O T H A M O', url="t.me/Le_gbot"}},
+{{text = ' BOT BATOT',url="t.me/Batot_51_bot"},{text = 'BOT HAMO', url="t.me/Le_gbot"}},
 {{text = '˹ B A C K ˼', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
