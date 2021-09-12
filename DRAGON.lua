@@ -3300,24 +3300,23 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/H_1_0O&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == "ثيم" and not  bot_data:get(ban_id.."sing:for:me"..msg.chat_id_) then 
-ban = math.random(1,33); 
-local Text ='الي استخدام ثيم اخر اكتب ثيم' 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{text = 'ثيم أخري', callback_data="/chair"}}, 
+if text == "ثيم" then  
+ght = math.random(1,33);  
+local Text ='الي استخدام ثيم اخر اكتب ثيم'  
+keyboard = {}   
+keyboard.inline_keyboard = {  
 {{text = '❨ اضف البوت لمجموعتك ❩' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. msg.chat_id_ .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+}  
+local msg_id = msg.id_/2097152/0.5  
+https.request("https://api.telegram.org/bot"..token..'/sendDocument?chat_id=' .. msg.chat_id_ .. '&document=https://t.me/s281a/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == "استوري" and not  bot_data:get(ban_id.."sing:for:me"..msg.chat_id_) then 
-ban = math.random(9,102); 
+if text == "استوري" and not  database:get(bot_id.."sing:for:me"..msg.chat_id_) then 
+ght = math.random(9,102); 
 local Text ='تم اختيار استوري ليك ياروحي 🌝💘' 
 keyboard = {}  
-keyboard.inline_keyboard = {
-{{text = 'استوري أخري', callback_data="/lklpo"}}, 
+keyboard.inline_keyboard = { 
+{{text = '❨ اضف البوت لمجموعتك ❩' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/g732a/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14967,7 +14966,7 @@ local List = {
 金 - 𝓼𝓽𝓪𝓼𝓽  . #stast ⸙ 
 金 - 𝓲𝓭 . #id ⸙ 
 金 - 𝓰𝓶𝓪𝓼 . #gmas ⸙ 
-金 - 𝓶𝓼??𝓼 . #msgs ⸙
+金 - 𝓶𝓼𝓰𝓼 . #msgs ⸙
 ]],
 [[
 🇯🇵 - 𝄬 username . #username  𓃠
@@ -17441,39 +17440,6 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
-
-if Text == '/lklpo' then
-Text = 'تم اختيار استوري ليك ياروحي 🌝💘'
-ban = math.random(4,74); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'استوري أخري', callback_data="/lklpo"},
-},
-{
-{text = '❨ اضف البوت لمجموعتك ❩' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. Chat_id .. '&video=https://t.me/Qapplu/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if Text == '/chair' then
-Text = 'االي استخدام ثيم اخر اكتب ثيم' 
-ban = math.random(1,57); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'ثيم أخري', callback_data="/chair"},
-},
-{
-{text = '❨ اضف البوت لمجموعتك ❩' ,url="t.me/"..dofile("./Bkar.lua").botUserName.."?startgroup=start"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
-
 if Text == '/help5' then
 if not Mod(data) then
 local notText = '✘ عذرا الاوامر هذه لا تخصك'
@@ -17574,7 +17540,7 @@ local Teext =[[
 قــــول+كــــــلـــمـــه😎
 🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
 اســــم الـــبـــوت +الــامـــر🌍
-🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ ??
+🧸 ≪━━━━☩𝑩𝑨𝑲𝑨𝑹☩━━━━≫ 🧸
 بــــوســــه بـــالـــرد🎗️
 مــــصـــه بـــالـــرد🎗️
 رزلـــه بــــالــرد🎗️
